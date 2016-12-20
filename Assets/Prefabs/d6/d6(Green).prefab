@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1000010648987438}
+  m_IsPrefabParent: 1
+--- !u!1 &1000010648987438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4000010725317924}
+  - component: {fileID: 33000010766780500}
+  - component: {fileID: 23000011809852332}
+  - component: {fileID: 54000011642302288}
+  - component: {fileID: 65000012773992182}
+  - component: {fileID: 114000013865021448}
+  - component: {fileID: 114674672563462876}
+  m_Layer: 0
+  m_Name: d6(Green)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000010725317924
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010648987438}
+  m_LocalRotation: {x: -0.5164673, y: 0.08027093, z: -0.4959913, w: 0.6934053}
+  m_LocalPosition: {x: 3.7283468, y: -2.97, z: 13.3826065}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -39.536003, y: 53.729004, z: -91.839005}
+--- !u!23 &23000011809852332
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010648987438}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: e1b10ec27189f314f8f2916004ecee8e, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &33000010766780500
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010648987438}
+  m_Mesh: {fileID: 4300000, guid: bff719296b931314d89ad27e5e4d5ba7, type: 3}
+--- !u!54 &54000011642302288
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010648987438}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0.3
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &65000012773992182
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010648987438}
+  m_Material: {fileID: 13400000, guid: ebbf393b19c307d4e896d9ce6f61c4fe, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0505667, y: 2.0505667, z: 2.0505667}
+  m_Center: {x: -0.000000059604645, y: 0, z: 0}
+--- !u!114 &114000013865021448
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010648987438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f3f252609f370b4eb2e1853ab6b3df4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 0
+--- !u!114 &114674672563462876
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010648987438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa40c5ce77a20174793f1384076ced31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DieHitSounds:
+  - {fileID: 8300000, guid: 8611d33d320c1c840a725800b587d404, type: 3}
+  - {fileID: 8300000, guid: 12fab4c1d9d837d42b3c5eaf614f5c85, type: 3}
+  - {fileID: 8300000, guid: 5994e9d708f0b2c44873d62135587604, type: 3}
+  - {fileID: 8300000, guid: bd9824cbb1d65294d826d6b652480c2a, type: 3}
+  - {fileID: 8300000, guid: 49c05cd50e0d82e4aaea32d782631fd0, type: 3}
+  - {fileID: 8300000, guid: 1e06a5a57959564459cd907487fe790d, type: 3}
+  - {fileID: 8300000, guid: ba2236648f094be43a1c56a77c2b0068, type: 3}
+  - {fileID: 8300000, guid: c62b3f8670a395840b0adfae0ef5681e, type: 3}

@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: cfc016ba5ceca574d9e260e06bbfff18
+timeCreated: 1482175965
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Earthquake MF
+  fontNames:
+  - Earthquake MF
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
