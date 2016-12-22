@@ -10,6 +10,7 @@ TagManager:
   - wheel2
   - wheel3
   - Bowl
+  - door
   layers:
   - Default
   - TransparentFX

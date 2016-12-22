@@ -4,12 +4,9 @@ using System.Collections;
 public class Wheel : MonoBehaviour {
 
     public int wheelNum = 0;
-    public GameObject wheel_up;
-    public GameObject wheel_down;
 
     private bool turnUp = false;
     private bool turnDown = false;
-
     private int currentNumber = 1;
     private float rotationAngle = 40.0f;
     private float smoothRotation = 5.0f;
@@ -28,37 +25,27 @@ public class Wheel : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        var ray1 = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit = new RaycastHit();
-
-        if (Input.GetButtonDown("Fire1") && !WheelData.Instance.isTurning && !WheelData.Instance.solved)
+        if (turnUp)
         {
-            if (Physics.Raycast(ray1, out hit, 3))
-            {
-                //somehow the collider down isn't recognized. Needs to be fixed!
-                //for now I switched the functions rotateUp and rotateDown and the rotation Vectors left and right
-                if ((hit.collider.gameObject == wheel_up) && wheel_up != null)
-                {
-                    WheelData.Instance.updateNumber = true;
-                    WheelData.Instance.isTurning = true;
+            WheelData.Instance.updateNumber = true;
+            turnUp = false;
 
-                    rotateDown();
+            rotateDown();
 
-                    targetRotation *= Quaternion.Euler(Vector3.left * 40);
+            targetRotation *= Quaternion.Euler(Vector3.left * 40);
 
-                }
-                else if ((hit.collider.gameObject == wheel_down) && wheel_down != null)
-                {
-                    WheelData.Instance.updateNumber = true;
-                    WheelData.Instance.isTurning = true;
+        }
+        else if (turnDown)
+        {
+            WheelData.Instance.updateNumber = true;
+            turnDown = false;
 
-                    rotateUp();
+            rotateUp();
 
-                    targetRotation *= Quaternion.Euler(Vector3.right * 40);
-                }
-            }
+            targetRotation *= Quaternion.Euler(Vector3.right * 40);
         }
 
+        //Apply Rotation
         transform.localRotation = Quaternion.Lerp(transform.localRotation, targetRotation, Time.deltaTime * smoothRotation);
     }
 
@@ -84,8 +71,13 @@ public class Wheel : MonoBehaviour {
         WheelData.Instance.setCurrentNumber(wheelNum, currentNumber = (currentNumber % 9) + 1);
     }
 
-    //IEnumerator spinWheel()
-    //{
-    //    yield return new WaitForSeconds(0.5f);
-    //}
+    public void setTurnUp()
+    {
+        turnUp = true;
+    }
+
+    public void setTurnDown()
+    {
+        turnDown = true;
+    }
 }

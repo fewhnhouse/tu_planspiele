@@ -18,14 +18,13 @@ public class WheelLogic : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (WheelData.Instance.updateNumber && WheelData.Instance.isTurning)
+        if (WheelData.Instance.updateNumber)
         { 
             UpdateSum();
             printSum();
             playSound();
 
             WheelData.Instance.updateNumber = false;
-            WheelData.Instance.isTurning = false;
         }
 
         if (WheelData.Instance.sum == 21)
@@ -47,7 +46,7 @@ public class WheelLogic : MonoBehaviour {
 
                 if (WheelData.Instance.doorMoving)
                 {
-                    door.transform.Translate(Vector3.down * 0.01f, Space.World);
+                    door.transform.Translate(Vector3.down * 0.03f, Space.World);
                 }
                 else
                 {
