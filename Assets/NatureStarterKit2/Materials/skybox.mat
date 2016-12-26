@@ -90,7 +90,7 @@ Material:
       second: 0
     - first:
         name: _Exposure
-      second: 1
+      second: 0.64
     - first:
         name: _Glossiness
       second: 0.5
@@ -108,7 +108,7 @@ Material:
       second: 0.02
     - first:
         name: _Rotation
-      second: 0
+      second: 222
     - first:
         name: _SrcBlend
       second: 1
@@ -127,4 +127,4 @@ Material:
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _Tint
-      second: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+      second: {r: 0.8088235, g: 1, b: 0.8813387, a: 0.5}
