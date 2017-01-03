@@ -3,7 +3,13 @@ using System.Collections;
 
 public class WheelLogic : MonoBehaviour {
 
+    public bool cheat = false;
     public GameObject door;
+    public float doorMovSpeed = 0.02f;
+    public GameObject doorDust1;
+    public GameObject doorDust2;
+    private ParticleSystem ddPS1;
+    private ParticleSystem ddPS2;
     public AudioClip[] turnSounds;
     public AudioClip sucessSound;
     public AudioClip wallSound;
@@ -13,6 +19,8 @@ public class WheelLogic : MonoBehaviour {
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        ddPS1 = doorDust1.GetComponent<ParticleSystem>();
+        ddPS2 = doorDust2.GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -21,36 +29,43 @@ public class WheelLogic : MonoBehaviour {
         if (WheelData.Instance.updateNumber)
         { 
             UpdateSum();
-            printSum();
+            //printSum();
             playSound();
 
             WheelData.Instance.updateNumber = false;
         }
 
-        if (WheelData.Instance.sum == 21)
+        if (WheelData.Instance.sum == 21 || cheat)
         {
-            if (WheelData.Instance.getCurrentNumber(0) == 7 &&
+            if ((WheelData.Instance.getCurrentNumber(0) == 7 &&
                 WheelData.Instance.getCurrentNumber(1) == 9 &&
                 WheelData.Instance.getCurrentNumber(2) == 2 &&
-                WheelData.Instance.getCurrentNumber(3) == 3)
+                WheelData.Instance.getCurrentNumber(3) == 3) || cheat)
             {
                 if (!WheelData.Instance.solved)
                 {
+                    //start sound of rockdoor
                     audioSource.clip = wallSound;
                     audioSource.loop = wallSound;
                     audioSource.Play();
+
+                    //start displaying the dust from the rockdoor
+                    ddPS1.Play();
+                    ddPS2.Play();
+
                     WheelData.Instance.doorMoving = true;
                 }
                 WheelData.Instance.solved = true;
-                Debug.Log("Fertig");
 
                 if (WheelData.Instance.doorMoving)
                 {
-                    door.transform.Translate(Vector3.down * 0.03f, Space.World);
+                    door.transform.Translate(Vector3.down * Time.deltaTime, Space.World);
                 }
                 else
                 {
                     audioSource.Stop();
+                    ddPS1.Stop();
+                    ddPS2.Stop();
                 }
             }
         }
@@ -79,8 +94,5 @@ public class WheelLogic : MonoBehaviour {
         int n = Random.Range(1, turnSounds.Length);
         audioSource.clip = turnSounds[n];
         audioSource.PlayOneShot(audioSource.clip);
-        // move picked sound to index 0 so it's not picked next time
-        //turnSounds[n] = turnSounds[0];
-        //turnSounds[0] = audioSource.clip;
     }
 }
