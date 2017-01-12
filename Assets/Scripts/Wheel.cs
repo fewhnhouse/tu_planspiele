@@ -12,7 +12,6 @@ public class Wheel : MonoBehaviour {
     private float smoothRotation = 5.0f;
     private Quaternion targetRotation;
     private float target;
-    private bool alreadyChanged = false;
 
 
     // Use this for initialization
@@ -32,7 +31,7 @@ public class Wheel : MonoBehaviour {
 
             rotateDown();
 
-            targetRotation *= Quaternion.Euler(Vector3.left * 40);
+            targetRotation *= Quaternion.Euler(Vector3.left * rotationAngle);
 
         }
         else if (turnDown)
@@ -42,7 +41,7 @@ public class Wheel : MonoBehaviour {
 
             rotateUp();
 
-            targetRotation *= Quaternion.Euler(Vector3.right * 40);
+            targetRotation *= Quaternion.Euler(Vector3.right * rotationAngle);
         }
 
         //Apply Rotation

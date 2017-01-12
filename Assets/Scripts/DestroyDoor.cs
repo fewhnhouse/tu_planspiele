@@ -5,7 +5,7 @@ public class DestroyDoor : MonoBehaviour {
 
     void OnTriggerEnter(Collider hit)
     {
-        if(hit.gameObject.tag == "door")
+        if (hit.gameObject.tag == "door")
         {
             //Destroy(hit.gameObject);
             WheelData.Instance.doorMoving = false;
