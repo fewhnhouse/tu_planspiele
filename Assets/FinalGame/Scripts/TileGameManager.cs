@@ -15,29 +15,37 @@ public class TileGameManager : MonoBehaviour {
     //Private
     private float difficulty = 0;                       //current difficulty       
     private List<int> safeNumbers = new List<int>();    //current safe number for the player
-    private float timeLeftInRound;
-    private Tile[,] tiles;
-    private bool gameEnded = false;
+    private float timeLeftInRound;                      
+    private Tile[,] tiles;                              //2d array that saves each tile [0,0] is bottom left
+    private State state = State.SetDifficulty;          //current game state
+
+    private enum State
+    {
+        SetDifficulty, Started, Ended
+    }
 
 	// Use this for initialization
 	void Start () {
-        SetField();
-        RandomizeField();
-
-        timeLeftInRound = TimeForEachRound;
+        SetDifficulty(1);
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (!gameEnded)
+        switch(state)
         {
-            timeLeftInRound -= Time.deltaTime;
+            case State.Started:
+                timeLeftInRound -= Time.deltaTime;
 
-            if (timeLeftInRound <= 0)
-            {
-                EndOfRound();
-            }
+                if (timeLeftInRound <= 0)
+                {
+                    EndOfRound();
+                }
+                break;
+
+            case State.Ended:
+                break;
+
         }
 	}
 
@@ -50,13 +58,14 @@ public class TileGameManager : MonoBehaviour {
     }
 
     /// <summary>
-    /// Sets the difficulty (float 0...1 ) of the tile game.
+    /// Sets the difficulty (1,2,3,4 ) of the tile game.
     /// The higher the difficulty the less the dominant number appears each round; making it harder for the player to find an easy combination to cross the field.
     /// </summary>
-    /// <param name="difficulty">Difficulty (0...1) of the game depending on the prize money set.</param>
-    public void SetDifficulty(float difficulty)
+    /// <param name="difficulty">Difficulty (1,2,3,4) of the game depending on the prize money set.</param>
+    public void SetDifficulty(int difficulty)
     {
-        this.difficulty = Mathf.Clamp01(difficulty);
+        this.difficulty = Mathf.Clamp(difficulty, 1, 4);
+        StartGame();
     }
 
     /// <summary>
@@ -115,6 +124,16 @@ public class TileGameManager : MonoBehaviour {
         return NumberOfRounds;
     }
 
+    private void StartGame()
+    {
+        SetSafeNumbers(new List<int>() { 1, 2, 3, 4 });
+        SetField();
+        RandomizeField();
+
+        timeLeftInRound = TimeForEachRound;
+        state = State.Started;
+    }
+
     private Tile GetTile(int x, int z)
     {
         if(x < 0 || z < 0 || x > NumberOfColumns - 1 || z > NumberOfRows - 1)
@@ -138,7 +157,7 @@ public class TileGameManager : MonoBehaviour {
                 //calculate position relative to manager
                 Vector3 position = new Vector3(x * widthEachTile, 0, z * depthEachTile);
                 //create new tile
-                GameObject newTile = Instantiate(PlatformPrefab, position, PlatformPrefab.transform.rotation, transform);
+                GameObject newTile = Instantiate(PlatformPrefab, transform.TransformPoint(position), PlatformPrefab.transform.rotation, transform);
 
                 //set game manager
                 Tile t = newTile.GetComponent<Tile>();
@@ -150,15 +169,79 @@ public class TileGameManager : MonoBehaviour {
         }
     }
 
+    //randomize tile values depending on difficulty
+    //todo refine algorithm maybe?
     private void RandomizeField()
     {
+        //choose dominant number
+        int dominantNumber = Random.Range(1, 9);
+
+        //Add tiles to list
+        List<Tile> allTiles = new List<Tile>(tiles.Length);
+
         for (int x = 0; x < NumberOfColumns; x++)
         {
             for (int z = 0; z < NumberOfRows; z++)
             {
-                GetTile(x, z).SetValue(Random.Range(1, 9));
+                allTiles.Add(GetTile(x, z));
             }
         }
+
+        //shuffle tiles
+        int n = allTiles.Count;
+        while (n > 1)
+        {
+            int k = (Random.Range(0, n) % n);
+            n--;
+            Tile value = allTiles[k];
+            allTiles[k] = allTiles[n];
+            allTiles[n] = value;
+        }
+
+        //split list into dominant and non-dominant number tiles depending on difficulty
+        float percentageDominantNumber = 1;
+        if(difficulty == 4)
+        {
+            percentageDominantNumber = 0f;
+        }
+        else if(difficulty == 3)
+        {
+            percentageDominantNumber = 0.2f;
+        }
+        else if(difficulty == 2)
+        {
+            percentageDominantNumber = 0.3f;
+        }
+        else
+        {
+            percentageDominantNumber = 0.4f;
+        }
+        int cutoffIndex = Mathf.RoundToInt(allTiles.Count * percentageDominantNumber);
+
+        List<Tile> dominantTiles = allTiles.GetRange(0, cutoffIndex);
+        List<Tile> nonDominantTiles = allTiles.GetRange(cutoffIndex, allTiles.Count - cutoffIndex);
+        List<int> nonDominantNumbers = new List<int>(8);
+        for(int i = 1; i < 10; i++)
+        {
+            if(i != dominantNumber)
+            {
+                nonDominantNumbers.Add(i);
+            }
+        }
+
+        //set number in dominant tiles
+        foreach(Tile t in dominantTiles)
+        {
+            t.SetValue(dominantNumber);
+        }
+
+        //set numbers in non-dominant tiles
+        foreach(Tile t in nonDominantTiles)
+        {
+            t.SetValue(nonDominantNumbers[Random.Range(0, 8)]);
+        }
+
+        Debug.Log("D Number:" + dominantNumber);
     }
 
     private void ResetTiles()
@@ -174,7 +257,6 @@ public class TileGameManager : MonoBehaviour {
 
     private void EndOfRound()
     {
-        Debug.Log("TileManager: End of Round");
 
         if (NumberOfRounds > 1)
         {
@@ -195,6 +277,7 @@ public class TileGameManager : MonoBehaviour {
     private void EndOfGame()
     {
         Debug.Log("TileManager: End of Game");
-        gameEnded = true;
+        state = State.Ended;
+        //todo...
     }
 }

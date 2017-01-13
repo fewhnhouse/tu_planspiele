@@ -26,7 +26,6 @@ public class Tile : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
         tileRenderer = GetComponent<Renderer>();
-        startPosition = transform.localPosition;
     }
 
     void Update()
@@ -37,7 +36,7 @@ public class Tile : MonoBehaviour {
                 //so it doesnt fall infinitely
                 if (transform.position.y > -FallDistance)
                 {
-                    transform.Translate(new Vector3(0, FallSpeed, 0) * Time.deltaTime, Space.World);
+                    transform.Translate(new Vector3(0, -FallSpeed, 0) * Time.deltaTime, Space.World);
                 }
                 break;
                 
@@ -52,6 +51,7 @@ public class Tile : MonoBehaviour {
                 break;
 
             case State.Stay:
+                startPosition = transform.position;
                 break;
         }
     }
@@ -78,16 +78,15 @@ public class Tile : MonoBehaviour {
             //set new material
             tileRenderer.material = newMaterial;
         }
+
+        value = newValue;
     }
 
-    void OnCollisionStay(Collision c)
+    void OnTriggerStay(Collider c)
     {
-        Debug.Log("Bla");
         //if the player is on the tile
         if (c.gameObject.CompareTag("Player"))
         {
-
-            Debug.Log("Bla2");
             //if this tile is not safe
             if (!gameManager.IsSafeNumber(value))
             {
