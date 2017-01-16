@@ -18,6 +18,20 @@ public class TileGameManager : MonoBehaviour {
     private float timeLeftInRound;                      
     private Tile[,] tiles;                              //2d array that saves each tile [0,0] is bottom left
     private State state = State.SetDifficulty;          //current game state
+    private bool rulesSet = false;
+
+    public bool RulesSet
+    {
+        get
+        {
+            return rulesSet;
+        }
+
+        set
+        {
+            rulesSet = value;
+        }
+    }
 
     private enum State
     {
@@ -65,6 +79,7 @@ public class TileGameManager : MonoBehaviour {
     public void SetDifficulty(int difficulty)
     {
         this.difficulty = Mathf.Clamp(difficulty, 1, 4);
+        Debug.Log("diffset to " + difficulty);
         StartGame();
     }
 
