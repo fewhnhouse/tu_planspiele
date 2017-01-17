@@ -27453,6 +27453,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114086364692796648, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: myClips.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_LocalPosition.x
       value: 60.5
@@ -27573,6 +27578,11 @@ Prefab:
       propertyPath: m_StepOffset
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 114086364692796648, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: myClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 56afde36f02cd204480c9b2fda4edcbc, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_IsPrefabParent: 0
