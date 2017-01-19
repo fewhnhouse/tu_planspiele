@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.24
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.53965235, g: 0.3858302, b: 0.19443971, a: 0.24}
+  m_IndirectSpecularColor: {r: 0.53812736, g: 0.3858377, b: 0.19438216, a: 0.24}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -7896,6 +7896,82 @@ Transform:
   m_PrefabParentObject: {fileID: 4040800864292934, guid: e49081fa6e8e6c747a672fe727c96df9,
     type: 2}
   m_PrefabInternal: {fileID: 262514492}
+--- !u!1001 &264967118
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000013234686016, guid: 25cd52eb7c5e3eb479c54d44782dce8f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 242.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013234686016, guid: 25cd52eb7c5e3eb479c54d44782dce8f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 41.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013234686016, guid: 25cd52eb7c5e3eb479c54d44782dce8f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 154.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013234686016, guid: 25cd52eb7c5e3eb479c54d44782dce8f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013234686016, guid: 25cd52eb7c5e3eb479c54d44782dce8f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013234686016, guid: 25cd52eb7c5e3eb479c54d44782dce8f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013234686016, guid: 25cd52eb7c5e3eb479c54d44782dce8f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013234686016, guid: 25cd52eb7c5e3eb479c54d44782dce8f, type: 2}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011987166870, guid: 25cd52eb7c5e3eb479c54d44782dce8f, type: 2}
+      propertyPath: m_Name
+      value: billboard_final (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013234686016, guid: 25cd52eb7c5e3eb479c54d44782dce8f, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013234686016, guid: 25cd52eb7c5e3eb479c54d44782dce8f, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013234686016, guid: 25cd52eb7c5e3eb479c54d44782dce8f, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 102000010861588018, guid: 25cd52eb7c5e3eb479c54d44782dce8f,
+        type: 2}
+      propertyPath: m_Text
+      value: "Dein Ziel: Bewege die gro\xDFe Spielfigur geschickt auf\ndas Zielfeld.
+        Du kannst den Weg der Figur durch\ndrehen der Scheiben vor dir beeinflussen.
+        Aber du\nmusst gut mitdenken und dir den Weg der Figur im Kopf\nvorstellen.
+        Denn sie bewegt sich erst nachdem du auch\nden 4. Pfeil best\xE4tigt hast.
+        Aber sei gewarnt, jedes mal\nbevor sie 1 Feld in die Richtung deines Pfeiles
+        gehen\nw\xFCrde, bewegt sie sich nach den Farben auf der\nanderen Seite des
+        Sees. Durch diese bleibt\nsie entweder stehen oder bewgt sich um ein Feld
+        \nhorizontal bzw. vertikal. Dabei ist die Farbe entschei-\ndend. Am wahrscheinlichsten
+        zu gr\xFCn und am\nunwahrscheinlichsten zu rotem Feld. Viel Gl\xFCck!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 102000010861588018, guid: 25cd52eb7c5e3eb479c54d44782dce8f,
+        type: 2}
+      propertyPath: m_LineSpacing
+      value: 0.95
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 25cd52eb7c5e3eb479c54d44782dce8f, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &266435264 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4885460185817908, guid: 14bcdc275a4cb4e46bcb1b905defcebe,
