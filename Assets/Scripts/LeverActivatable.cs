@@ -31,6 +31,8 @@ public class LeverActivatable : MonoBehaviour, Activatable {
 
     private void RotateLever()
     {
+        //GetComponent<Animator>().Play("Armature|Action",0);
+       
         if (!Active)
         {
             leverObject.transform.eulerAngles = new Vector3(-70, startEulerAngles.y, startEulerAngles.z);
@@ -43,6 +45,6 @@ public class LeverActivatable : MonoBehaviour, Activatable {
             Skull.SetActive(Active);
             GetComponent<AudioSource>().Play();
         }
-
+    
     }
 }
