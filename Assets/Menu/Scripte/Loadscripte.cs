@@ -7,6 +7,7 @@ public class Loadscripte : MonoBehaviour {
 
     private Vector3 pos;
     private bool loaded;
+    public bool[] finishedLevels = new bool[3];
     public static Loadscripte load;
 	// Use this for initialization
 	void Awake () {
@@ -23,6 +24,10 @@ public class Loadscripte : MonoBehaviour {
     void Start()
     {
         loaded = false;
+        for (int i = 0; i < finishedLevels.Length; i++)
+        {
+            finishedLevels[i] = false;
+        }
     }
 
     public Vector3 getPos()

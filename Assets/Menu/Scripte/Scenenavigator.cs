@@ -35,6 +35,7 @@ public class Scenenavigator : MonoBehaviour
             FileStream file = File.Open(Application.persistentDataPath + "/playerProgress.dat", FileMode.Open);
             playerProgress data = (playerProgress)bf.Deserialize(file);
             Loadscripte.load.setPos(arrayToVec(data.pos));
+            Loadscripte.load.finishedLevels = data.progress;
             file.Close();
             Loadscripte.load.setLoaded(true);
             SceneManager.LoadScene(scene);

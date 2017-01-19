@@ -110,7 +110,7 @@ public class Pausenscripte : MonoBehaviour
         }
     }
 
-    // Save and Load part
+    // Save part
 
     // Saves the players position and rotation into a file called playerProgress.dat
     private void Save()
@@ -119,6 +119,7 @@ public class Pausenscripte : MonoBehaviour
         FileStream file = File.Create(Application.persistentDataPath + "/playerProgress.dat");
         playerProgress plPro = new playerProgress();
         plPro.pos = vecToArray(Charakter.transform.position);
+        plPro.progress = Loadscripte.load.finishedLevels;
         // plPro.rot = vecToArray(Charakter.transform.rotation.eulerAngles);
         bf.Serialize(file, plPro);
         file.Close();
@@ -170,6 +171,8 @@ public class Pausenscripte : MonoBehaviour
 class playerProgress
 {
     public float[] pos = new float[3];
+    // Saves which levels have been finished
+    public bool[] progress = new bool[3];
     // public float[] rot = new float[3];
 }
 
