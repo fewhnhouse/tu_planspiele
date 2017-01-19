@@ -27,13 +27,13 @@ public class Pausenscripte : MonoBehaviour
     {
         PauseCanvas.enabled = false;
         savedC.enabled = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         reallyEndC.enabled = false;
         Camera.SetActive(false);
         Charakter.SetActive(true);
         Time.timeScale = 1;
-        setInteractiable(true,PauseCanvas.GetComponents<Button>());
+        setInteractiable(true,PauseCanvas.GetComponentsInChildren<Button>());
 
         // Laden teil
         if (Loadscripte.load.getLoaded())
@@ -48,9 +48,10 @@ public class Pausenscripte : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            PauseCanvas.enabled = !PauseCanvas.enabled;
-            if (PauseCanvas.enabled)
+            
+            if (!PauseCanvas.enabled)
             {
+                PauseCanvas.enabled = !PauseCanvas.enabled;
                 Cursor.lockState = CursorLockMode.Confined;
                 Cursor.visible = true;
                 Time.timeScale = 0;
@@ -62,13 +63,7 @@ public class Pausenscripte : MonoBehaviour
             }
             else
             {
-                // closes the Menu and starts the game again
-                Time.timeScale = 1;
-                Cursor.lockState = CursorLockMode.Locked;
-                Charakter.SetActive(true);
-                Camera.SetActive(false);
-                Cursor.visible = false;
-                reallyEndC.enabled = false;
+                continueGame();
             }
         }
 
@@ -76,11 +71,16 @@ public class Pausenscripte : MonoBehaviour
 
     public void continueGame()
     {
+        setInteractiable(true, PauseCanvas.GetComponentsInChildren<Button>());
         PauseCanvas.enabled = !PauseCanvas.enabled;
         Time.timeScale = 1;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         Charakter.SetActive(true);
         Camera.SetActive(false);
+        reallyEndC.enabled = false;
+        savedC.enabled = false;
+        
+        
     }
     // Is Called if you end the game to check if you really want to end
     public void reallyEnd()
