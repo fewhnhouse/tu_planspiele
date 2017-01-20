@@ -1,0 +1,522 @@
+fileFormatVersion: 2
+guid: 6b64082372da14d4a9d9db30d6446f05
+timeCreated: 1484921910
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: aztec_railing_prefab (66)
+    100002: aztec_railing_prefab (66).001
+    100004: aztec_railing_prefab (66).002
+    100006: aztec_railing_prefab (66).003
+    100008: aztec_railing_prefab (66).004
+    100010: aztec_railing_prefab (66).005
+    100012: aztec_railing_prefab (66).006
+    100014: aztec_railing_prefab (66).007
+    100016: aztec_railing_prefab (66).008
+    100018: aztec_railing_prefab (66).009
+    100020: aztec_railing_prefab (66).010
+    100022: aztec_railing_prefab (66).011
+    100024: aztec_railing_prefab (66).012
+    100026: aztec_railing_prefab (66).013
+    100028: aztec_railing_prefab (66).014
+    100030: aztec_railing_prefab (66).015
+    100032: aztec_railing_prefab (66).016
+    100034: aztec_railing_prefab (66).017
+    100036: aztec_railing_prefab (66).018
+    100038: aztec_railing_prefab (66).019
+    100040: aztec_railing_prefab (66).020
+    100042: aztec_railing_prefab (66).021
+    100044: aztec_railing_prefab (66).022
+    100046: aztec_railing_prefab (66).023
+    100048: aztec_railing_prefab (66).024
+    100050: aztec_railing_prefab (66).025
+    100052: aztec_railing_prefab (66).026
+    100054: aztec_railing_prefab (66).027
+    100056: aztec_railing_prefab (66).028
+    100058: aztec_railing_prefab (66).029
+    100060: aztec_railing_prefab (66).030
+    100062: aztec_railing_prefab (66).031
+    100064: aztec_railing_prefab (66).032
+    100066: aztec_railing_prefab (66).033
+    100068: aztec_railing_prefab (66).034
+    100070: aztec_railing_prefab (66).035
+    100072: aztec_railing_prefab (66).036
+    100074: aztec_railing_prefab (66).037
+    100076: aztec_railing_prefab (66).038
+    100078: aztec_railing_prefab (66).039
+    100080: aztec_railing_prefab (66).040
+    100082: aztec_railing_prefab (66).041
+    100084: aztec_railing_prefab (66).042
+    100086: aztec_railing_prefab (66).043
+    100088: aztec_railing_prefab (66).044
+    100090: aztec_railing_prefab (66).045
+    100092: aztec_railing_prefab (66).046
+    100094: aztec_railing_prefab (66).047
+    100096: aztec_railing_prefab (66).048
+    100098: aztec_railing_prefab (66).049
+    100100: aztec_railing_prefab (66).050
+    100102: aztec_railing_prefab (66).051
+    100104: aztec_railing_prefab (66).052
+    100106: aztec_railing_prefab (66).053
+    100108: aztec_railing_prefab (66).054
+    100110: aztec_railing_prefab (66).055
+    100112: aztec_railing_prefab (66).056
+    100114: aztec_railing_prefab (66).057
+    100116: aztec_railing_prefab (66).058
+    100118: aztec_railing_prefab (66).059
+    100120: aztec_railing_prefab (66).060
+    100122: aztec_railing_prefab (66).061
+    100124: aztec_railing_prefab (66).062
+    100126: aztec_railing_prefab (66).063
+    100128: aztec_railing_prefab (66).064
+    100130: aztec_railing_prefab (66).065
+    100132: aztec_railing_prefab (66).066
+    100134: aztec_railing_prefab (66).067
+    100136: aztec_railing_prefab (66).068
+    100138: aztec_railing_prefab (66).069
+    100140: aztec_railing_prefab (66).070
+    100142: aztec_railing_prefab (66).071
+    100144: aztec_railing_prefab (66).072
+    100146: aztec_railing_prefab (66).073
+    100148: aztec_railing_prefab (66).074
+    100150: aztec_railing_prefab (66).075
+    100152: aztec_railing_prefab (66).076
+    100154: aztec_railing_prefab (66).077
+    100156: aztec_railing_prefab (66).078
+    100158: aztec_railing_prefab (66).079
+    100160: aztec_railing_prefab (66).080
+    100162: aztec_railing_prefab (66).081
+    100164: aztec_railing_prefab (66).082
+    100166: aztec_railing_prefab (66).083
+    100168: aztec_railing_prefab (66).084
+    100170: aztec_railing_prefab (66).085
+    100172: aztec_railing_prefab (66).086
+    100174: aztec_railing_prefab (66).087
+    100176: aztec_railing_prefab (66).088
+    100178: //RootNode
+    400000: aztec_railing_prefab (66)
+    400002: aztec_railing_prefab (66).001
+    400004: aztec_railing_prefab (66).002
+    400006: aztec_railing_prefab (66).003
+    400008: aztec_railing_prefab (66).004
+    400010: aztec_railing_prefab (66).005
+    400012: aztec_railing_prefab (66).006
+    400014: aztec_railing_prefab (66).007
+    400016: aztec_railing_prefab (66).008
+    400018: aztec_railing_prefab (66).009
+    400020: aztec_railing_prefab (66).010
+    400022: aztec_railing_prefab (66).011
+    400024: aztec_railing_prefab (66).012
+    400026: aztec_railing_prefab (66).013
+    400028: aztec_railing_prefab (66).014
+    400030: aztec_railing_prefab (66).015
+    400032: aztec_railing_prefab (66).016
+    400034: aztec_railing_prefab (66).017
+    400036: aztec_railing_prefab (66).018
+    400038: aztec_railing_prefab (66).019
+    400040: aztec_railing_prefab (66).020
+    400042: aztec_railing_prefab (66).021
+    400044: aztec_railing_prefab (66).022
+    400046: aztec_railing_prefab (66).023
+    400048: aztec_railing_prefab (66).024
+    400050: aztec_railing_prefab (66).025
+    400052: aztec_railing_prefab (66).026
+    400054: aztec_railing_prefab (66).027
+    400056: aztec_railing_prefab (66).028
+    400058: aztec_railing_prefab (66).029
+    400060: aztec_railing_prefab (66).030
+    400062: aztec_railing_prefab (66).031
+    400064: aztec_railing_prefab (66).032
+    400066: aztec_railing_prefab (66).033
+    400068: aztec_railing_prefab (66).034
+    400070: aztec_railing_prefab (66).035
+    400072: aztec_railing_prefab (66).036
+    400074: aztec_railing_prefab (66).037
+    400076: aztec_railing_prefab (66).038
+    400078: aztec_railing_prefab (66).039
+    400080: aztec_railing_prefab (66).040
+    400082: aztec_railing_prefab (66).041
+    400084: aztec_railing_prefab (66).042
+    400086: aztec_railing_prefab (66).043
+    400088: aztec_railing_prefab (66).044
+    400090: aztec_railing_prefab (66).045
+    400092: aztec_railing_prefab (66).046
+    400094: aztec_railing_prefab (66).047
+    400096: aztec_railing_prefab (66).048
+    400098: aztec_railing_prefab (66).049
+    400100: aztec_railing_prefab (66).050
+    400102: aztec_railing_prefab (66).051
+    400104: aztec_railing_prefab (66).052
+    400106: aztec_railing_prefab (66).053
+    400108: aztec_railing_prefab (66).054
+    400110: aztec_railing_prefab (66).055
+    400112: aztec_railing_prefab (66).056
+    400114: aztec_railing_prefab (66).057
+    400116: aztec_railing_prefab (66).058
+    400118: aztec_railing_prefab (66).059
+    400120: aztec_railing_prefab (66).060
+    400122: aztec_railing_prefab (66).061
+    400124: aztec_railing_prefab (66).062
+    400126: aztec_railing_prefab (66).063
+    400128: aztec_railing_prefab (66).064
+    400130: aztec_railing_prefab (66).065
+    400132: aztec_railing_prefab (66).066
+    400134: aztec_railing_prefab (66).067
+    400136: aztec_railing_prefab (66).068
+    400138: aztec_railing_prefab (66).069
+    400140: aztec_railing_prefab (66).070
+    400142: aztec_railing_prefab (66).071
+    400144: aztec_railing_prefab (66).072
+    400146: aztec_railing_prefab (66).073
+    400148: aztec_railing_prefab (66).074
+    400150: aztec_railing_prefab (66).075
+    400152: aztec_railing_prefab (66).076
+    400154: aztec_railing_prefab (66).077
+    400156: aztec_railing_prefab (66).078
+    400158: aztec_railing_prefab (66).079
+    400160: aztec_railing_prefab (66).080
+    400162: aztec_railing_prefab (66).081
+    400164: aztec_railing_prefab (66).082
+    400166: aztec_railing_prefab (66).083
+    400168: aztec_railing_prefab (66).084
+    400170: aztec_railing_prefab (66).085
+    400172: aztec_railing_prefab (66).086
+    400174: aztec_railing_prefab (66).087
+    400176: aztec_railing_prefab (66).088
+    400178: //RootNode
+    2300000: aztec_railing_prefab (66)
+    2300002: aztec_railing_prefab (66).001
+    2300004: aztec_railing_prefab (66).002
+    2300006: aztec_railing_prefab (66).003
+    2300008: aztec_railing_prefab (66).004
+    2300010: aztec_railing_prefab (66).005
+    2300012: aztec_railing_prefab (66).006
+    2300014: aztec_railing_prefab (66).007
+    2300016: aztec_railing_prefab (66).008
+    2300018: aztec_railing_prefab (66).009
+    2300020: aztec_railing_prefab (66).010
+    2300022: aztec_railing_prefab (66).011
+    2300024: aztec_railing_prefab (66).012
+    2300026: aztec_railing_prefab (66).013
+    2300028: aztec_railing_prefab (66).014
+    2300030: aztec_railing_prefab (66).015
+    2300032: aztec_railing_prefab (66).016
+    2300034: aztec_railing_prefab (66).017
+    2300036: aztec_railing_prefab (66).018
+    2300038: aztec_railing_prefab (66).019
+    2300040: aztec_railing_prefab (66).020
+    2300042: aztec_railing_prefab (66).021
+    2300044: aztec_railing_prefab (66).022
+    2300046: aztec_railing_prefab (66).023
+    2300048: aztec_railing_prefab (66).024
+    2300050: aztec_railing_prefab (66).025
+    2300052: aztec_railing_prefab (66).026
+    2300054: aztec_railing_prefab (66).027
+    2300056: aztec_railing_prefab (66).028
+    2300058: aztec_railing_prefab (66).029
+    2300060: aztec_railing_prefab (66).030
+    2300062: aztec_railing_prefab (66).031
+    2300064: aztec_railing_prefab (66).032
+    2300066: aztec_railing_prefab (66).033
+    2300068: aztec_railing_prefab (66).034
+    2300070: aztec_railing_prefab (66).035
+    2300072: aztec_railing_prefab (66).036
+    2300074: aztec_railing_prefab (66).037
+    2300076: aztec_railing_prefab (66).038
+    2300078: aztec_railing_prefab (66).039
+    2300080: aztec_railing_prefab (66).040
+    2300082: aztec_railing_prefab (66).041
+    2300084: aztec_railing_prefab (66).042
+    2300086: aztec_railing_prefab (66).043
+    2300088: aztec_railing_prefab (66).044
+    2300090: aztec_railing_prefab (66).045
+    2300092: aztec_railing_prefab (66).046
+    2300094: aztec_railing_prefab (66).047
+    2300096: aztec_railing_prefab (66).048
+    2300098: aztec_railing_prefab (66).049
+    2300100: aztec_railing_prefab (66).050
+    2300102: aztec_railing_prefab (66).051
+    2300104: aztec_railing_prefab (66).052
+    2300106: aztec_railing_prefab (66).053
+    2300108: aztec_railing_prefab (66).054
+    2300110: aztec_railing_prefab (66).055
+    2300112: aztec_railing_prefab (66).056
+    2300114: aztec_railing_prefab (66).057
+    2300116: aztec_railing_prefab (66).058
+    2300118: aztec_railing_prefab (66).059
+    2300120: aztec_railing_prefab (66).060
+    2300122: aztec_railing_prefab (66).061
+    2300124: aztec_railing_prefab (66).062
+    2300126: aztec_railing_prefab (66).063
+    2300128: aztec_railing_prefab (66).064
+    2300130: aztec_railing_prefab (66).065
+    2300132: aztec_railing_prefab (66).066
+    2300134: aztec_railing_prefab (66).067
+    2300136: aztec_railing_prefab (66).068
+    2300138: aztec_railing_prefab (66).069
+    2300140: aztec_railing_prefab (66).070
+    2300142: aztec_railing_prefab (66).071
+    2300144: aztec_railing_prefab (66).072
+    2300146: aztec_railing_prefab (66).073
+    2300148: aztec_railing_prefab (66).074
+    2300150: aztec_railing_prefab (66).075
+    2300152: aztec_railing_prefab (66).076
+    2300154: aztec_railing_prefab (66).077
+    2300156: aztec_railing_prefab (66).078
+    2300158: aztec_railing_prefab (66).079
+    2300160: aztec_railing_prefab (66).080
+    2300162: aztec_railing_prefab (66).081
+    2300164: aztec_railing_prefab (66).082
+    2300166: aztec_railing_prefab (66).083
+    2300168: aztec_railing_prefab (66).084
+    2300170: aztec_railing_prefab (66).085
+    2300172: aztec_railing_prefab (66).086
+    2300174: aztec_railing_prefab (66).087
+    2300176: aztec_railing_prefab (66).088
+    3300000: aztec_railing_prefab (66)
+    3300002: aztec_railing_prefab (66).001
+    3300004: aztec_railing_prefab (66).002
+    3300006: aztec_railing_prefab (66).003
+    3300008: aztec_railing_prefab (66).004
+    3300010: aztec_railing_prefab (66).005
+    3300012: aztec_railing_prefab (66).006
+    3300014: aztec_railing_prefab (66).007
+    3300016: aztec_railing_prefab (66).008
+    3300018: aztec_railing_prefab (66).009
+    3300020: aztec_railing_prefab (66).010
+    3300022: aztec_railing_prefab (66).011
+    3300024: aztec_railing_prefab (66).012
+    3300026: aztec_railing_prefab (66).013
+    3300028: aztec_railing_prefab (66).014
+    3300030: aztec_railing_prefab (66).015
+    3300032: aztec_railing_prefab (66).016
+    3300034: aztec_railing_prefab (66).017
+    3300036: aztec_railing_prefab (66).018
+    3300038: aztec_railing_prefab (66).019
+    3300040: aztec_railing_prefab (66).020
+    3300042: aztec_railing_prefab (66).021
+    3300044: aztec_railing_prefab (66).022
+    3300046: aztec_railing_prefab (66).023
+    3300048: aztec_railing_prefab (66).024
+    3300050: aztec_railing_prefab (66).025
+    3300052: aztec_railing_prefab (66).026
+    3300054: aztec_railing_prefab (66).027
+    3300056: aztec_railing_prefab (66).028
+    3300058: aztec_railing_prefab (66).029
+    3300060: aztec_railing_prefab (66).030
+    3300062: aztec_railing_prefab (66).031
+    3300064: aztec_railing_prefab (66).032
+    3300066: aztec_railing_prefab (66).033
+    3300068: aztec_railing_prefab (66).034
+    3300070: aztec_railing_prefab (66).035
+    3300072: aztec_railing_prefab (66).036
+    3300074: aztec_railing_prefab (66).037
+    3300076: aztec_railing_prefab (66).038
+    3300078: aztec_railing_prefab (66).039
+    3300080: aztec_railing_prefab (66).040
+    3300082: aztec_railing_prefab (66).041
+    3300084: aztec_railing_prefab (66).042
+    3300086: aztec_railing_prefab (66).043
+    3300088: aztec_railing_prefab (66).044
+    3300090: aztec_railing_prefab (66).045
+    3300092: aztec_railing_prefab (66).046
+    3300094: aztec_railing_prefab (66).047
+    3300096: aztec_railing_prefab (66).048
+    3300098: aztec_railing_prefab (66).049
+    3300100: aztec_railing_prefab (66).050
+    3300102: aztec_railing_prefab (66).051
+    3300104: aztec_railing_prefab (66).052
+    3300106: aztec_railing_prefab (66).053
+    3300108: aztec_railing_prefab (66).054
+    3300110: aztec_railing_prefab (66).055
+    3300112: aztec_railing_prefab (66).056
+    3300114: aztec_railing_prefab (66).057
+    3300116: aztec_railing_prefab (66).058
+    3300118: aztec_railing_prefab (66).059
+    3300120: aztec_railing_prefab (66).060
+    3300122: aztec_railing_prefab (66).061
+    3300124: aztec_railing_prefab (66).062
+    3300126: aztec_railing_prefab (66).063
+    3300128: aztec_railing_prefab (66).064
+    3300130: aztec_railing_prefab (66).065
+    3300132: aztec_railing_prefab (66).066
+    3300134: aztec_railing_prefab (66).067
+    3300136: aztec_railing_prefab (66).068
+    3300138: aztec_railing_prefab (66).069
+    3300140: aztec_railing_prefab (66).070
+    3300142: aztec_railing_prefab (66).071
+    3300144: aztec_railing_prefab (66).072
+    3300146: aztec_railing_prefab (66).073
+    3300148: aztec_railing_prefab (66).074
+    3300150: aztec_railing_prefab (66).075
+    3300152: aztec_railing_prefab (66).076
+    3300154: aztec_railing_prefab (66).077
+    3300156: aztec_railing_prefab (66).078
+    3300158: aztec_railing_prefab (66).079
+    3300160: aztec_railing_prefab (66).080
+    3300162: aztec_railing_prefab (66).081
+    3300164: aztec_railing_prefab (66).082
+    3300166: aztec_railing_prefab (66).083
+    3300168: aztec_railing_prefab (66).084
+    3300170: aztec_railing_prefab (66).085
+    3300172: aztec_railing_prefab (66).086
+    3300174: aztec_railing_prefab (66).087
+    3300176: aztec_railing_prefab (66).088
+    4300000: aztec_railing_prefab (66).088
+    4300002: aztec_railing_prefab (66).087
+    4300004: aztec_railing_prefab (66).086
+    4300006: aztec_railing_prefab (66).085
+    4300008: aztec_railing_prefab (66).084
+    4300010: aztec_railing_prefab (66).083
+    4300012: aztec_railing_prefab (66).082
+    4300014: aztec_railing_prefab (66).081
+    4300016: aztec_railing_prefab (66).080
+    4300018: aztec_railing_prefab (66).079
+    4300020: aztec_railing_prefab (66).078
+    4300022: aztec_railing_prefab (66).077
+    4300024: aztec_railing_prefab (66).076
+    4300026: aztec_railing_prefab (66).075
+    4300028: aztec_railing_prefab (66).074
+    4300030: aztec_railing_prefab (66).073
+    4300032: aztec_railing_prefab (66).072
+    4300034: aztec_railing_prefab (66).071
+    4300036: aztec_railing_prefab (66).070
+    4300038: aztec_railing_prefab (66).069
+    4300040: aztec_railing_prefab (66).068
+    4300042: aztec_railing_prefab (66).067
+    4300044: aztec_railing_prefab (66).066
+    4300046: aztec_railing_prefab (66).065
+    4300048: aztec_railing_prefab (66).064
+    4300050: aztec_railing_prefab (66).063
+    4300052: aztec_railing_prefab (66).062
+    4300054: aztec_railing_prefab (66).061
+    4300056: aztec_railing_prefab (66).060
+    4300058: aztec_railing_prefab (66).059
+    4300060: aztec_railing_prefab (66).058
+    4300062: aztec_railing_prefab (66).057
+    4300064: aztec_railing_prefab (66).056
+    4300066: aztec_railing_prefab (66).055
+    4300068: aztec_railing_prefab (66).054
+    4300070: aztec_railing_prefab (66).053
+    4300072: aztec_railing_prefab (66).052
+    4300074: aztec_railing_prefab (66).051
+    4300076: aztec_railing_prefab (66).050
+    4300078: aztec_railing_prefab (66).049
+    4300080: aztec_railing_prefab (66).048
+    4300082: aztec_railing_prefab (66).047
+    4300084: aztec_railing_prefab (66).046
+    4300086: aztec_railing_prefab (66).045
+    4300088: aztec_railing_prefab (66).044
+    4300090: aztec_railing_prefab (66).043
+    4300092: aztec_railing_prefab (66).042
+    4300094: aztec_railing_prefab (66).041
+    4300096: aztec_railing_prefab (66).040
+    4300098: aztec_railing_prefab (66).039
+    4300100: aztec_railing_prefab (66).038
+    4300102: aztec_railing_prefab (66).037
+    4300104: aztec_railing_prefab (66).036
+    4300106: aztec_railing_prefab (66).035
+    4300108: aztec_railing_prefab (66).034
+    4300110: aztec_railing_prefab (66).033
+    4300112: aztec_railing_prefab (66).032
+    4300114: aztec_railing_prefab (66).031
+    4300116: aztec_railing_prefab (66).030
+    4300118: aztec_railing_prefab (66).029
+    4300120: aztec_railing_prefab (66).028
+    4300122: aztec_railing_prefab (66).027
+    4300124: aztec_railing_prefab (66).026
+    4300126: aztec_railing_prefab (66).025
+    4300128: aztec_railing_prefab (66).024
+    4300130: aztec_railing_prefab (66).023
+    4300132: aztec_railing_prefab (66).022
+    4300134: aztec_railing_prefab (66).021
+    4300136: aztec_railing_prefab (66).020
+    4300138: aztec_railing_prefab (66).019
+    4300140: aztec_railing_prefab (66).018
+    4300142: aztec_railing_prefab (66).017
+    4300144: aztec_railing_prefab (66).016
+    4300146: aztec_railing_prefab (66).015
+    4300148: aztec_railing_prefab (66).014
+    4300150: aztec_railing_prefab (66).013
+    4300152: aztec_railing_prefab (66).012
+    4300154: aztec_railing_prefab (66).011
+    4300156: aztec_railing_prefab (66).010
+    4300158: aztec_railing_prefab (66).009
+    4300160: aztec_railing_prefab (66).008
+    4300162: aztec_railing_prefab (66).007
+    4300164: aztec_railing_prefab (66).006
+    4300166: aztec_railing_prefab (66).005
+    4300168: aztec_railing_prefab (66).004
+    4300170: aztec_railing_prefab (66).003
+    4300172: aztec_railing_prefab (66).002
+    4300174: aztec_railing_prefab (66).001
+    4300176: aztec_railing_prefab (66)
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
