@@ -24,9 +24,15 @@ public class BenditLever : MonoBehaviour, Activatable
             i++;
         }
 
-        //if(i >= l)
+        //if (i >= l)
         //{
-        //    BanditData.Instance.solved = true;
+        //    //BanditData.Instance.solved = true;
+        //    i = 0;
+        //    for (int i = 0; i < 4; i++)
+        //    {
+        //        w = wheel[i].GetComponent<BanditWheel>();
+        //        w.setStartWheel();
+        //    }
         //}
     }
 }
