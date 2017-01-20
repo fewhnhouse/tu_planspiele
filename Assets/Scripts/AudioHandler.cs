@@ -14,14 +14,14 @@ public class AudioHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey("f"))
+		/*if (Input.GetKey("f"))
         {
             StartCoroutine(fadeOut(4f));
         }
         if (Input.GetKey("g"))
         {
             StartCoroutine(fadeIn(1.0f, 4f));
-        }
+        }*/
 	}
     //fade in in 0.1f steps
     public IEnumerator fadeIn(float toVolume, float duration)
