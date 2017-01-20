@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrapDoorAnimation: MonoBehaviour {
-    private bool closed = true;
-    private Animator animator;
-    private Collider doorCollider;
+public class SkullAnimator : MonoBehaviour {
 
-    void Start()
-    {
+    private bool closed;
+    private Animator animator;
+
+	// Use this for initialization
+	void Start () {
         animator = GetComponent<Animator>();
-        doorCollider = GetComponent<Collider>();
+
         Close();
     }
 
@@ -31,10 +31,5 @@ public class TrapDoorAnimation: MonoBehaviour {
     public bool isClosed()
     {
         return closed;
-    }
-
-    private void UpdateCollider()
-    {
-        doorCollider.enabled = closed;
     }
 }
