@@ -12,6 +12,7 @@ TagManager:
   - Bowl
   - door
   - startBandit
+  - AudioHandler
   layers:
   - Default
   - TransparentFX
