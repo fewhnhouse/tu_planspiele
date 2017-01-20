@@ -13593,6 +13593,7 @@ MonoBehaviour:
   playerCC: {fileID: 769492795}
   playerPosition: {fileID: 769492789}
   figureFromDirectionGame: {fileID: 677440452}
+  playerOnBoat: 0
 --- !u!1001 &355461319
 Prefab:
   m_ObjectHideFlags: 0
@@ -31508,15 +31509,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 204.327
+      value: 213.4
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 44.22
+      value: 36.78
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 164.685
+      value: 172
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_LocalRotation.x
