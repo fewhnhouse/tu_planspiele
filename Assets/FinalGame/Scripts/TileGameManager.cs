@@ -18,6 +18,21 @@ public class TileGameManager : MonoBehaviour {
     private float timeLeftInRound;                      
     private Tile[,] tiles;                              //2d array that saves each tile [0,0] is bottom left
     private State state = State.SetDifficulty;          //current game state
+    private bool fieldSet = false;
+    private bool rulesSet = false;
+
+    public bool RulesSet
+    {
+        get
+        {
+            return rulesSet;
+        }
+
+        set
+        {
+            rulesSet = value;
+        }
+    }
 
     private enum State
     {
@@ -26,7 +41,6 @@ public class TileGameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        SetDifficulty(1);
     }
 	
 	// Update is called once per frame
@@ -65,6 +79,7 @@ public class TileGameManager : MonoBehaviour {
     public void SetDifficulty(int difficulty)
     {
         this.difficulty = Mathf.Clamp(difficulty, 1, 4);
+        Debug.Log("diffset to " + difficulty);
         StartGame();
     }
 
@@ -126,7 +141,7 @@ public class TileGameManager : MonoBehaviour {
 
     private void StartGame()
     {
-        SetSafeNumbers(new List<int>() { 1, 2, 3, 4 });
+        SetSafeNumbers(new List<int>() { 1, 2, 3, 4 });//todo remove
         SetField();
         RandomizeField();
 
@@ -146,6 +161,9 @@ public class TileGameManager : MonoBehaviour {
 
     private void SetField()
     {
+        if (fieldSet)
+            return;
+
         tiles = new Tile[NumberOfColumns, NumberOfRows];
         float widthEachTile = FieldDimensions.x / (NumberOfColumns - 1);
         float depthEachTile = FieldDimensions.y / (NumberOfRows - 1);
@@ -167,6 +185,8 @@ public class TileGameManager : MonoBehaviour {
                 tiles[x, z] = t;
             }
         }
+
+        fieldSet = true;
     }
 
     //randomize tile values depending on difficulty
