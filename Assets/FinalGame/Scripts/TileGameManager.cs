@@ -79,7 +79,7 @@ public class TileGameManager : MonoBehaviour {
     public void SetDifficulty(int difficulty)
     {
         this.difficulty = Mathf.Clamp(difficulty, 1, 4);
-        Debug.Log("diffset to " + difficulty);
+        Debug.Log("difficulty set to " + difficulty);
         StartGame();
     }
 
@@ -112,6 +112,13 @@ public class TileGameManager : MonoBehaviour {
             return;
         }
 
+        string s = "Set safe numbers to: ";
+        foreach(int i in safeNumbers)
+        {
+            s += i + ", ";
+        }
+        Debug.Log(s);
+
         //safe number is definitely a non-empty list
         this.safeNumbers = safeNumbers;
     }
@@ -141,7 +148,7 @@ public class TileGameManager : MonoBehaviour {
 
     private void StartGame()
     {
-        SetSafeNumbers(new List<int>() { 1, 2, 3, 4 });//todo remove
+        //SetSafeNumbers(new List<int>() { 1, 2, 3, 4 });//todo remove
         SetField();
         RandomizeField();
 
@@ -261,7 +268,6 @@ public class TileGameManager : MonoBehaviour {
             t.SetValue(nonDominantNumbers[Random.Range(0, 8)]);
         }
 
-        Debug.Log("D Number:" + dominantNumber);
     }
 
     private void ResetTiles()

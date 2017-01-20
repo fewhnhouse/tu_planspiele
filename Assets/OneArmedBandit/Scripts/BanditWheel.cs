@@ -37,8 +37,8 @@ public class BanditWheel : MonoBehaviour {
             targetRotation *= Quaternion.Euler(Vector3.left * rotationAngle);
             sourceRotation = transform.rotation;
 
-            Debug.Log("sourceRotation: " + sourceRotation + ";  targetRotation: " + targetRotation);
-            Debug.Log(Quaternion.Angle(transform.rotation, targetRotation));
+            //Debug.Log("sourceRotation: " + sourceRotation + ";  targetRotation: " + targetRotation);
+            //Debug.Log(Quaternion.Angle(transform.rotation, targetRotation));
         }
         else if (turnDown)
         {
@@ -55,7 +55,6 @@ public class BanditWheel : MonoBehaviour {
 
         if (Quaternion.Angle(transform.rotation, targetRotation) <= 99.0f && !stopWheel)
         {
-            Debug.Log("Test");
             turnUp = true;
         }
     }
