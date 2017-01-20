@@ -86,17 +86,17 @@ public class FigureMovementBehaviourScript : MonoBehaviour
             movementFinished = false;
         }
 
-        if (won) {
+        //if (won) {
 
             
-            current = Vector3.MoveTowards(bridg.transform.position, new Vector3(bridg.transform.position.x, 35.0f, bridg.transform.position.z), Time.deltaTime * speed);
-            bridg.transform.position = current;
+        //    current = Vector3.MoveTowards(bridg.transform.position, new Vector3(bridg.transform.position.x, 35.0f, bridg.transform.position.z), Time.deltaTime * speed);
+        //    bridg.transform.position = current;
 
-            if (bridg.transform.position == new Vector3(bridg.transform.position.x, 35.0f, bridg.transform.position.z))
-            {
-                won = false;
-            }
-        }
+        //    if (bridg.transform.position == new Vector3(bridg.transform.position.x, 35.0f, bridg.transform.position.z))
+        //    {
+        //        won = false;
+        //    }
+        //}
     }
 
     int firstMove(int position)
