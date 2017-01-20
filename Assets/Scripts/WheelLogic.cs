@@ -14,13 +14,15 @@ public class WheelLogic : MonoBehaviour {
     public AudioClip sucessSound;
     public AudioClip wallSound;
     private AudioSource audioSource;
-
+    private float initialDoorHeight;
+    private float newDoorHeight;
     // Use this for initialization
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         ddPS1 = doorDust1.GetComponent<ParticleSystem>();
         ddPS2 = doorDust2.GetComponent<ParticleSystem>();
+        initialDoorHeight = newDoorHeight = door.transform.position.y;
     }
 
     // Update is called once per frame
@@ -60,6 +62,11 @@ public class WheelLogic : MonoBehaviour {
                 if (WheelData.Instance.doorMoving)
                 {
                     door.transform.Translate(Vector3.down * Time.deltaTime, Space.World);
+                    newDoorHeight = door.transform.position.y;
+                    if(initialDoorHeight - newDoorHeight > 10)
+                    {
+                        WheelData.Instance.doorMoving = false;
+                    }
                 }
                 else
                 {
