@@ -1,15 +1,38 @@
 fileFormatVersion: 2
-guid: 092936fe036e9fe4cb00dadcf21442c4
-timeCreated: 1484867561
+guid: 95c9a6c108b267d4db42cae59a13cc0e
+timeCreated: 1485002424
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
+    100000: Armature
+    100002: base
+    100004: bigGear
+    100006: bigGear_end
+    100008: gear1
+    100010: gear1_end
+    100012: gear2
+    100014: gear2_end
+    100016: handle
+    100018: handle_end
+    100020: //RootNode
+    100022: Plane.055
+    400000: Armature
+    400002: base
+    400004: bigGear
+    400006: bigGear_end
+    400008: gear1
+    400010: gear1_end
+    400012: gear2
+    400014: gear2_end
+    400016: handle
+    400018: handle_end
+    400020: //RootNode
+    400022: Plane.055
     4300000: Plane.055
+    7400000: Armature|ArmatureAction
+    9500000: //RootNode
+    13700000: Plane.055
   materials:
     importMaterials: 1
     materialName: 0
@@ -72,7 +95,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
