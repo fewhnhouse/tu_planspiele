@@ -6,6 +6,9 @@ using System.Collections.Generic;
 
 [RequireComponent(typeof(DiceManager))]
 public class SpawnHandler: MonoBehaviour {
+    public float DiceDespawnDelay;
+    public float TrapDoorCloseDelay;
+    public TrapDoorAnimation TrapDoor;
     [Range(0f, 90f)]
     public float MaxAngle;
     [Range(1f, 10f)]
@@ -88,12 +91,15 @@ public class SpawnHandler: MonoBehaviour {
 
     private void DeleteSpawnedDice()
     {
+        TrapDoor.Open();
         foreach (GameObject g in spawnedDice)
         {
-            Destroy(g);
+            Destroy(g, DiceDespawnDelay);
         }
         spawnedDice.Clear();
         DManager.Reset();
+
+        StartCoroutine(CloseTrapDoor());
     }
 
     private bool SpawnAtPoint(int diceType, Transform spawnPoint)
@@ -137,5 +143,12 @@ public class SpawnHandler: MonoBehaviour {
 
         return true;
 
+    }
+
+    private IEnumerator CloseTrapDoor()
+    {
+        yield return new WaitForSeconds(TrapDoorCloseDelay);
+
+        TrapDoor.Close();
     }
 }

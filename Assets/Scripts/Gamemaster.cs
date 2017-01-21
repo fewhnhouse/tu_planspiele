@@ -5,16 +5,17 @@ using UnityEngine.UI;
 
 [RequireComponent(typeof(SpawnHandler))]
 public class Gamemaster : MonoBehaviour {
+    public bool cheat;
     public List<RequirementHandler.Mode> scenarios = new List<RequirementHandler.Mode>();
     public List<string> scenarioText = new List<string>();
     public Text currentScenarioText;
-
-    public Activatable bridge;
+    
     public LeverActivatable[] levers;
 
     private SpawnHandler SpHandler;
     private RequirementHandler RHandler;
     private int currentModeIndex;
+    private bool hasCheated = false;
 
 	// Use this for initialization
 	void Start ()
@@ -23,6 +24,15 @@ public class Gamemaster : MonoBehaviour {
         RHandler = GetComponent<RequirementHandler>();
         SetScenario(0);
 	}
+
+    void Update()
+    {
+        if(!hasCheated && cheat)
+        {
+            hasCheated = true;
+            Finished();
+        }
+    }
     
     public void startDice()
     {
@@ -66,6 +76,8 @@ public class Gamemaster : MonoBehaviour {
 
     private void Finished()
     {
+        GetComponent<MoveBridgesUp>().MoveBridges();
+        currentScenarioText.text = "Hint: 3";
         Debug.Log("Finished Würfel Puzzle");
     }
 }

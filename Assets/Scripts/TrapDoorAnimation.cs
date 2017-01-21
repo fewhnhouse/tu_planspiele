@@ -17,14 +17,14 @@ public class TrapDoorAnimation: MonoBehaviour {
     public void Open()
     {
         closed = false;
-
+        UpdateCollider();
         animator.SetBool("closed", closed);
     }
 
     public void Close()
     {
         closed = true;
-
+        UpdateCollider();
         animator.SetBool("closed", closed);
     }
 
