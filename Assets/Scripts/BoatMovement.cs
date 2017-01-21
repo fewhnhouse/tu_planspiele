@@ -9,9 +9,8 @@ public class BoatMovement : MonoBehaviour, Activatable
     public GameObject playerPosition;
     public GameObject figureFromDirectionGame;
     public bool playerOnBoat;
-
     private Animator myAnimator;
-
+    private int i;
 	// Use this for initialization
 	void Start () {
 
@@ -19,15 +18,24 @@ public class BoatMovement : MonoBehaviour, Activatable
         myAnimator.enabled = false;
 	}
 	
+    void Update()
+    {
+        if (playerOnBoat)
+        {
+            playerPosition.transform.position = getBoatPosition();
+        }
+    }
 
     public void Activate()
     {
 
-        if (figureFromDirectionGame.GetComponent<FigureMovementBehaviourScript>().won)
+        if (!figureFromDirectionGame.GetComponent<FigureMovementBehaviourScript>().won)
         {
+            Debug.Log("activated");
             playerCC.enabled = false;
             playerOnBoat = true;
             playerPosition.transform.position = getBoatPosition();
+            myAnimator.enabled = true;
         }
         else
         {
@@ -39,4 +47,6 @@ public class BoatMovement : MonoBehaviour, Activatable
     {
         return new Vector3(transform.position.x + 1.0f, transform.position.y + 2.5f, transform.position.z);
     }
+
+
 }
