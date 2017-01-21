@@ -4,44 +4,28 @@ using System;
 
 public class MainLeverActivatable : MonoBehaviour, Activatable {
     public bool Active;
-    public GameObject leverObject;
+   // public GameObject leverObject;
     public Gamemaster gm;
-
-
-    private Vector3 startEulerAngles;
+    private Animator animator;
     public void Start()
     {
-
-        startEulerAngles = leverObject.transform.eulerAngles;
-        //light.enabled = Active;
-        RotateLever();
+        animator = GetComponent<Animator>();
+        animator.SetBool("Up", true);
+        Active = true;
     }
 
     public void Activate()
     {
         Active = !Active;
+        animator.SetBool("Up",Active);
 
-        if (Active)
+        if (!Active)
         {
             gm.startDice();
         }
         else
         {
             gm.ResetDice();
-        }
-
-        RotateLever();
-    }
-
-    private void RotateLever()
-    {
-        if (!Active)
-        {
-            leverObject.transform.eulerAngles = new Vector3(-70, startEulerAngles.y, startEulerAngles.z);
-        }
-        else
-        {
-            leverObject.transform.eulerAngles = new Vector3(-100, startEulerAngles.y, startEulerAngles.z);
         }
 
     }

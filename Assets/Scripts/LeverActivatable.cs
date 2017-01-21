@@ -2,16 +2,22 @@
 using System.Collections;
 
 public class LeverActivatable : MonoBehaviour, Activatable {
-    public bool Active = false;
-    public GameObject leverObject;
+    public bool Active;
+    //public GameObject leverObject;
     public SkullAnimator Skull;
+    private Animator animator;
 
     private Vector3 startEulerAngles;
     public void Start()
     {
+        Active = false;
+        animator = GetComponent<Animator>();
+        animator.SetBool("Up", !Active);
+        Skull.Close();
+        /*
         startEulerAngles = leverObject.transform.eulerAngles;
         
-        if (!Active)
+        if (Active)
         {
             leverObject.transform.eulerAngles = new Vector3(-70, startEulerAngles.y, startEulerAngles.z);
             Skull.Close();
@@ -21,6 +27,7 @@ public class LeverActivatable : MonoBehaviour, Activatable {
             leverObject.transform.eulerAngles = new Vector3(-100, startEulerAngles.y, startEulerAngles.z);
             Skull.Open();
         }
+        */
     }
 
 	public void Activate()
@@ -32,16 +39,20 @@ public class LeverActivatable : MonoBehaviour, Activatable {
     private void RotateLever()
     {
         Skull.GetComponent<Animator>().SetBool("closed", !Active);
+        animator.SetBool("Up", !Active);
+        GetComponent<AudioSource>().Play();
+        /*
         if (!Active)
         {
             leverObject.transform.eulerAngles = new Vector3(-70, startEulerAngles.y, startEulerAngles.z);
-            GetComponent<AudioSource>().Play();
+            
         }
         else
         {
             leverObject.transform.eulerAngles = new Vector3(-100, startEulerAngles.y, startEulerAngles.z);
             GetComponent<AudioSource>().Play();
         }
-   
+        */
+
     }
 }
