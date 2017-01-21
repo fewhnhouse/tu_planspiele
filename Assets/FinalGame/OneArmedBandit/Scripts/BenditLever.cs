@@ -17,22 +17,26 @@ public class BenditLever : MonoBehaviour, Activatable
     public void Activate()
     {
         //Debug.Log("length: " + l + "; i: " + i);
-        if(i < l)
+
+        if (i < l)
         {
             w = wheel[i].GetComponent<BanditWheel>();
             w.setStopWheel();
-            i++;
         }
 
-        //if (i >= l)
-        //{
-        //    //BanditData.Instance.solved = true;
-        //    i = 0;
-        //    for (int i = 0; i < 4; i++)
-        //    {
-        //        w = wheel[i].GetComponent<BanditWheel>();
-        //        w.setStartWheel();
-        //    }
-        //}
+        i++;
+        if (i == l)
+        {
+            BanditData.Instance.solved = true;
+        }
+        else if (i > l)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                w = wheel[i].GetComponent<BanditWheel>();
+                w.setStartWheel();
+            }
+            i = 0;
+        }
     }
 }
