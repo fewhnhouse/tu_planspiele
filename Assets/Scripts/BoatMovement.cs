@@ -23,6 +23,10 @@ public class BoatMovement : MonoBehaviour, Activatable
         if (playerOnBoat)
         {
             playerPosition.transform.position = getBoatPosition();
+            if (myAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+            {
+                JumpFromBoat();
+            }
         }
     }
 
@@ -46,6 +50,14 @@ public class BoatMovement : MonoBehaviour, Activatable
     private Vector3 getBoatPosition()
     {
         return new Vector3(transform.position.x + 1.0f, transform.position.y + 2.5f, transform.position.z);
+    }
+
+    private void JumpFromBoat()
+    {
+        playerOnBoat = false;
+        playerPosition.transform.position = new Vector3(playerPosition.transform.position.x + 4.5f, playerPosition.transform.position.y, playerPosition.transform.position.z - 1.5f);
+        myAnimator.enabled = false;
+        playerCC.enabled = true;
     }
 
 
