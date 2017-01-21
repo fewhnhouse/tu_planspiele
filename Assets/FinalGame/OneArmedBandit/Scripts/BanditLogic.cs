@@ -25,19 +25,22 @@ public class BanditLogic : MonoBehaviour {
         if (BanditData.Instance.updateNumber)
         {
             UpdateSum();
-            //printSum();
             //playSound();
-            safeNums.Add(BanditData.Instance.getCurrentNumber(0));
 
             BanditData.Instance.updateNumber = false;
         }
 
         if (BanditData.Instance.solved)
         {
+            //printSum();
+            BanditData.Instance.solved = false;
+
+            safeNums.Clear();
             for (int i = 0; i < 4; i++)
             {
-                safeNums.Add(BanditData.Instance.getCurrentNumber(i));
+                safeNums.Insert(i, BanditData.Instance.getCurrentNumber(i));
             }
+
             tGM.SetSafeNumbers(safeNums);
         }
     }
