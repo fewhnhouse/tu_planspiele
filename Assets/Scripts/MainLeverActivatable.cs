@@ -7,9 +7,11 @@ public class MainLeverActivatable : MonoBehaviour, Activatable {
    // public GameObject leverObject;
     public Gamemaster gm;
     private Animator animator;
+    private AudioSource audioSource;
     public void Start()
     {
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         animator.SetBool("Up", true);
         Active = true;
     }
@@ -18,6 +20,7 @@ public class MainLeverActivatable : MonoBehaviour, Activatable {
     {
         Active = !Active;
         animator.SetBool("Up",Active);
+        audioSource.Play();
 
         if (!Active)
         {
@@ -28,5 +31,6 @@ public class MainLeverActivatable : MonoBehaviour, Activatable {
             gm.ResetDice();
         }
 
+        
     }
 }

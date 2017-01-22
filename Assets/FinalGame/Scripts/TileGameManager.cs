@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TileGameManager : MonoBehaviour {
@@ -112,15 +113,27 @@ public class TileGameManager : MonoBehaviour {
             return;
         }
 
+        //remove duplicates
+        List<int> noDupes = new List<int>();
+        foreach (int i in safeNumbers)
+        {
+            if (!noDupes.Contains(i))
+            {
+                noDupes.Add(i);
+            }
+        }
+        //todo sort ascending?
+
+        //show on console
         string s = "Set safe numbers to: ";
-        foreach(int i in safeNumbers)
+        foreach(int i in noDupes)
         {
             s += i + ", ";
         }
         Debug.Log(s);
 
         //safe number is definitely a non-empty list
-        this.safeNumbers = safeNumbers;
+        this.safeNumbers = noDupes;
     }
 
     public int[] GetSafeNumbers()

@@ -78,6 +78,7 @@ public class Gamemaster : MonoBehaviour {
     {
         GetComponent<MoveBridgesUp>().MoveBridges();
         currentScenarioText.text = "Hint: 3";
+        SpHandler.Finished();
         Debug.Log("Finished Würfel Puzzle");
     }
 }

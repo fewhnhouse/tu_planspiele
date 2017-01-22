@@ -7,26 +7,32 @@ public class HighscoreLever : MonoBehaviour, Activatable
     public int m_difficulty;
     public bool Active = false;
     public TileGameManager myManager;
-    public GameObject leverObject;
+    public LeverAnimatorOnly leverAnimation;
     private Vector3 startEulerAngles;
 
     public void Start()
     {
-        startEulerAngles = leverObject.transform.eulerAngles;
-        //light.enabled = Active;
         if (!Active)
         {
-            leverObject.transform.eulerAngles = new Vector3(-70, startEulerAngles.y, startEulerAngles.z);
+            leverAnimation.Up(false);
         }
         else
         {
-            leverObject.transform.eulerAngles = new Vector3(-100, startEulerAngles.y, startEulerAngles.z);
+            leverAnimation.Down(false);
         }
     }
 
     public void Activate()
     {
         Active = !Active;
+
+        if (!myManager.RulesSet)
+        {
+            myManager.SetDifficulty(m_difficulty);
+            myManager.RulesSet = true;
+            //somewhere here the gold needs to be dropped
+        }
+
         RotateLever();
     }
 
@@ -34,20 +40,11 @@ public class HighscoreLever : MonoBehaviour, Activatable
     {
         if (!Active)
         {
-            leverObject.transform.eulerAngles = new Vector3(-70, startEulerAngles.y, startEulerAngles.z);
-            GetComponent<AudioSource>().Play();
+            leverAnimation.Up(true);
         }
         else 
         {
-            if (!myManager.RulesSet)
-            {
-                myManager.SetDifficulty(m_difficulty);
-                myManager.RulesSet = true;
-                //somewhere here the gold needs to be dropped
-            }
-            leverObject.transform.eulerAngles = new Vector3(-100, startEulerAngles.y, startEulerAngles.z);       
-            GetComponent<AudioSource>().Play();
+            leverAnimation.Down(true);  
         }
-
     }
 }
