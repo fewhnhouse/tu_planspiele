@@ -11,6 +11,7 @@ public class Gamemaster : MonoBehaviour {
     public Text currentScenarioText;
     
     public LeverActivatable[] levers;
+    public StoneDoor stoneDoor;
 
     private SpawnHandler SpHandler;
     private RequirementHandler RHandler;
@@ -76,7 +77,7 @@ public class Gamemaster : MonoBehaviour {
 
     private void Finished()
     {
-        GetComponent<MoveBridgesUp>().MoveBridges();
+        stoneDoor.Open();
         currentScenarioText.text = "Hint: 3";
         SpHandler.Finished();
         Debug.Log("Finished Würfel Puzzle");

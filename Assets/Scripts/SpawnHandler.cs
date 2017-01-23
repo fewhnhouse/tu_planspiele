@@ -91,7 +91,6 @@ public class SpawnHandler: MonoBehaviour {
 
     public void Finished()
     {
-        TrapDoor.Open();
         foreach (GameObject g in spawnedDice)
         {
             Destroy(g, DiceDespawnDelay);
