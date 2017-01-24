@@ -23,6 +23,8 @@ public class Pausenscripte : MonoBehaviour
     // The Scripte handels the pausing and continuing of the scene as well as saving and loading
 
     // Use this for initialization
+
+
     void Start()
     {
         PauseCanvas.enabled = false;
@@ -39,6 +41,11 @@ public class Pausenscripte : MonoBehaviour
         if (Loadscripte.load.getLoaded())
         {
             Charakter.transform.position = Loadscripte.load.getPos();
+            Gamemaster gm = new Gamemaster();
+            if((bool)Loadscripte.load.finishedLevels[0])
+            {
+             //   gm.Finished();
+            }
         }
 
     }
@@ -119,11 +126,19 @@ public class Pausenscripte : MonoBehaviour
         FileStream file = File.Create(Application.persistentDataPath + "/playerProgress.dat");
         playerProgress plPro = new playerProgress();
         plPro.pos = vecToArray(Charakter.transform.position);
-        plPro.progress = Loadscripte.load.finishedLevels;
-        // plPro.rot = vecToArray(Charakter.transform.rotation.eulerAngles);
+        plPro.progress = listToArray(Loadscripte.load.finishedLevels);
         bf.Serialize(file, plPro);
         file.Close();
 
+    }
+    private bool[] listToArray(ArrayList a)
+    {
+        bool[] b = new bool[3];
+        for (int i = 0; i < 3; i++)
+        {
+            b[i] =(bool) a[i];
+        }
+        return b;
     }
     
 

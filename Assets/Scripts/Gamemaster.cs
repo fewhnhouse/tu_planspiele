@@ -19,7 +19,7 @@ public class Gamemaster : MonoBehaviour {
     private bool hasCheated = false;
 
 	// Use this for initialization
-	void Start ()
+	void Awake ()
     {
         SpHandler = GetComponent<SpawnHandler>();
         RHandler = GetComponent<RequirementHandler>();
@@ -75,8 +75,9 @@ public class Gamemaster : MonoBehaviour {
         RHandler.SetRequirement(scenarios[currentModeIndex]);
     }
 
-    private void Finished()
+    public void Finished()
     {
+        Loadscripte.load.finishedLevels[0] = true;
         stoneDoor.Open();
         currentScenarioText.text = "Hint: 3";
         SpHandler.Finished();

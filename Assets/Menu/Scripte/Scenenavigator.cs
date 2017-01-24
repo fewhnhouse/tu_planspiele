@@ -35,7 +35,7 @@ public class Scenenavigator : MonoBehaviour
             FileStream file = File.Open(Application.persistentDataPath + "/playerProgress.dat", FileMode.Open);
             playerProgress data = (playerProgress)bf.Deserialize(file);
             Loadscripte.load.setPos(arrayToVec(data.pos));
-            Loadscripte.load.finishedLevels = data.progress;
+            Loadscripte.load.finishedLevels = arrayToList(data.progress);
             file.Close();
             Loadscripte.load.setLoaded(true);
             SceneManager.LoadScene(scene);
@@ -45,6 +45,15 @@ public class Scenenavigator : MonoBehaviour
     private Vector3 arrayToVec(float[] f)
     {
         return new Vector3(f[0], f[1], f[2]);
+    }
+    private ArrayList arrayToList(bool[] b)
+    {
+        ArrayList a = new ArrayList();
+        for (int i=0; i < b.Length; i++)
+        {
+            a.Add(b[i]);
+        }
+        return a;
     }
 
 

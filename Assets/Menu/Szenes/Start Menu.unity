@@ -14424,7 +14424,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: scene01
+          m_StringArgument: MainGame
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -36043,7 +36043,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: scene01
+          m_StringArgument: MainGame
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -47369,6 +47369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a30313ea9c9e7484d9dea76682cfd13f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finishedLevels: 
 --- !u!4 &1902877504
 Transform:
   m_ObjectHideFlags: 0
