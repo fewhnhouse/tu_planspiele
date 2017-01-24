@@ -12,6 +12,7 @@ public class TileGameManager : MonoBehaviour {
     public Vector2 FieldDimensions;
     public int NumberOfRows;
     public int NumberOfColumns;
+    public StoneTimer stoneTimer;
 
     //Private
     private float difficulty = 0;                       //current difficulty       
@@ -60,6 +61,7 @@ public class TileGameManager : MonoBehaviour {
                 }
 
                 timesPassed += Time.deltaTime;
+                stoneTimer.SetPercentage(1 - timeLeftInRound / TimeForEachRound);
                 break;
 
             case State.Ended:
@@ -191,6 +193,7 @@ public class TileGameManager : MonoBehaviour {
         RandomizeField();
 
         timeLeftInRound = TimeForEachRound;
+        stoneTimer.StartTimer();
         state = State.Started;
     }
 
@@ -330,6 +333,8 @@ public class TileGameManager : MonoBehaviour {
 
             timeLeftInRound = TimeForEachRound;
             NumberOfRounds--;
+
+            stoneTimer.ResetTimer();
         }
         else
         {
