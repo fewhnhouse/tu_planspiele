@@ -335,6 +335,7 @@ public class TileGameManager : MonoBehaviour {
             NumberOfRounds--;
 
             stoneTimer.ResetTimer();
+            ResetTiles();
         }
         else
         {
