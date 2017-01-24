@@ -32,7 +32,7 @@ public class BoatMovement : MonoBehaviour, Activatable
     public void Activate()
     {
 
-        if (!figureFromDirectionGame.GetComponent<FigureMovementBehaviourScript>().won)
+        if (figureFromDirectionGame.GetComponent<FigureMovementBehaviourScript>().won)
         {
             Debug.Log("activated");
             playerCC.enabled = false;
