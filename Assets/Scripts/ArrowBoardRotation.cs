@@ -52,6 +52,12 @@ public class ArrowBoardRotation : FigureMovementBehaviourScript , Activatable
             
             if (i == 4)
             {
+                //Debug
+                foreach (float f in PositionArray)
+                {
+                    Debug.Log(f + "  hier");
+                }
+
                 arrowSelectionPhase = false;
                 figure.GetComponent<FigureMovementBehaviourScript>().interactionPhaseFinished = true;
                 arrowPositions();
@@ -80,7 +86,7 @@ public class ArrowBoardRotation : FigureMovementBehaviourScript , Activatable
 
             arrowBoards.transform.GetChild(i).GetComponent<Animator>().SetTrigger("Activate");
 
-            PositionArray[i] = (PositionArray[i] + 1) % 4;
+            PositionArray[i] = (PositionArray[i] + 1.0f) % 4;
         }
 
         //if (arrowSelectionPhase == true)
