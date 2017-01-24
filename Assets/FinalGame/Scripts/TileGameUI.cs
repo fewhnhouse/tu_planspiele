@@ -16,7 +16,7 @@ public class TileGameUI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //Set timer text
-        TimeText.text = "Zeit übrig: " + string.Format("{0:.##}", GameManager.GetTimeLeftInRound());
+        TimeText.text = "Zeit übrig: " + string.Format("{0:00}", GameManager.GetTimeLeftInRound());
 
         //set safe numbers
         string zahlenText = "Zahlen:";

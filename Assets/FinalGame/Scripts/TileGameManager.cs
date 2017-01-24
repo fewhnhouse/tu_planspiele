@@ -21,6 +21,7 @@ public class TileGameManager : MonoBehaviour {
     private State state = State.SetDifficulty;          //current game state
     private bool fieldSet = false;
     private bool rulesSet = false;
+    private float timesPassed = 0;
 
     public bool RulesSet
     {
@@ -42,6 +43,7 @@ public class TileGameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        SetDifficulty(1);
     }
 	
 	// Update is called once per frame
@@ -56,6 +58,8 @@ public class TileGameManager : MonoBehaviour {
                 {
                     EndOfRound();
                 }
+
+                timesPassed += Time.deltaTime;
                 break;
 
             case State.Ended:
@@ -67,9 +71,27 @@ public class TileGameManager : MonoBehaviour {
     void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(
+        /*Gizmos.DrawWireCube(
             transform.TransformPoint(new Vector3(FieldDimensions.x/2, 0, FieldDimensions.y/ 2)),
-            new Vector3(FieldDimensions.x, 2, FieldDimensions.y));
+            new Vector3(FieldDimensions.x, 2, FieldDimensions.y));*/
+
+        float widthEachTile = FieldDimensions.x / (NumberOfColumns - 1);
+        float depthEachTile = FieldDimensions.y / (NumberOfRows - 1);
+        Vector3 tileSize = PlatformPrefab.GetComponent<BoxCollider>().size;
+        tileSize = new Vector3(tileSize.x, tileSize.z, tileSize.y);
+
+        for (int x = 0; x < NumberOfColumns; x++)
+        {
+            for (int z = 0; z < NumberOfRows; z++)
+            {
+                //calculate position relative to manager
+                Vector3 position = new Vector3(x * widthEachTile, 0, z * depthEachTile);
+                //create new tile
+
+                Gizmos.DrawWireCube(transform.TransformPoint(position), tileSize);
+            }
+        }
+
     }
 
     /// <summary>
@@ -80,7 +102,6 @@ public class TileGameManager : MonoBehaviour {
     public void SetDifficulty(int difficulty)
     {
         this.difficulty = Mathf.Clamp(difficulty, 1, 4);
-        Debug.Log("difficulty set to " + difficulty);
         StartGame();
     }
 
@@ -159,9 +180,13 @@ public class TileGameManager : MonoBehaviour {
         return NumberOfRounds;
     }
 
+    public float GetTimePassedInSeconds()
+    {
+        return timesPassed;
+    }
+
     private void StartGame()
     {
-        //SetSafeNumbers(new List<int>() { 1, 2, 3, 4 });//todo remove
         SetField();
         RandomizeField();
 
