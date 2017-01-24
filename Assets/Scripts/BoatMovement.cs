@@ -10,7 +10,6 @@ public class BoatMovement : MonoBehaviour, Activatable
     public GameObject figureFromDirectionGame;
     public bool playerOnBoat;
     private Animator myAnimator;
-    private int i;
 	// Use this for initialization
 	void Start () {
 
@@ -55,7 +54,7 @@ public class BoatMovement : MonoBehaviour, Activatable
     private void JumpFromBoat()
     {
         playerOnBoat = false;
-        playerPosition.transform.position = new Vector3(playerPosition.transform.position.x + 4.5f, playerPosition.transform.position.y, playerPosition.transform.position.z - 1.5f);
+        playerPosition.transform.position = new Vector3(playerPosition.transform.position.x + 4.5f, playerPosition.transform.position.y, playerPosition.transform.position.z + 3.5f);
         myAnimator.enabled = false;
         playerCC.enabled = true;
     }
