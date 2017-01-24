@@ -58,6 +58,16 @@ public class FigureMovementBehaviourScript : MonoBehaviour
             movementQueue(firstMove(startPosition));
             startMovement = true;
             step = 0;
+            //Just for Debugging
+            foreach(int i in positionQueue)
+            {
+                Debug.Log(i);
+            }
+            Debug.Log("pfeile");
+            foreach(float f in arrowPositionArray)
+            {
+                Debug.Log(f);
+            }
         }
                 
         if (startMovement == true)
