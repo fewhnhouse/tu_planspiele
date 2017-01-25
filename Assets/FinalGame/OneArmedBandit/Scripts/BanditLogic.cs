@@ -12,6 +12,9 @@ public class BanditLogic : MonoBehaviour {
     private AudioSource audioSource;
     private List<int> safeNums = new List<int>();
 
+    public int length = 0;
+    private int i = 0;
+
 
     // Use this for initialization
     void Start()
@@ -42,6 +45,18 @@ public class BanditLogic : MonoBehaviour {
             }
 
             tGM.SetSafeNumbers(safeNums);
+        }
+
+        if(BanditData.Instance.wheelStopped)
+        {
+            BanditData.Instance.wheelStopped = false;
+            i++;
+            if (i >= length)
+            {
+                BanditData.Instance.solved = true;
+                BanditData.Instance.restartBandit = true;
+                i = 0;
+            }
         }
     }
 

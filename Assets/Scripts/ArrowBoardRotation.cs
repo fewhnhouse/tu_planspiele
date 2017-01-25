@@ -9,11 +9,15 @@ public class ArrowBoardRotation : FigureMovementBehaviourScript , Activatable
  
     public GameObject buttons;
     private int i = 0;
-    
+    private bool isRotating = false;
     private bool arrowSelectionPhase = true;
     float[] PositionArray = { 0.0f, 0.0f, 0.0f, 0.0f };
+
+
     public BoxCollider collider0, collider1, collider2, collider3;
     public BoxCollider[] colliders ;
+
+
     // Use this for initialization
     void Start()
     {
@@ -78,15 +82,13 @@ public class ArrowBoardRotation : FigureMovementBehaviourScript , Activatable
         }
     }
 
+
     public void Activate()
     {
         if (arrowSelectionPhase == true)
         {
-            //arrowBoards.transform.GetChild(i).GetChild(0).rotation *= Quaternion.Euler(0, 90, 0);
-
             arrowBoards.transform.GetChild(i).GetComponent<Animator>().SetTrigger("Activate");
-
-            PositionArray[i] = (PositionArray[i] + 1.0f) % 4;
+            PositionArray[i] = (PositionArray[i] + 1.0f) % 4;   
         }
 
         //if (arrowSelectionPhase == true)

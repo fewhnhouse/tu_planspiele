@@ -7596,6 +7596,11 @@ Prefab:
       propertyPath: smoothRotation
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114509286571727210, guid: 7131cb0cb963ca74a91bb55c273aefa7,
+        type: 2}
+      propertyPath: length
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7131cb0cb963ca74a91bb55c273aefa7, type: 2}
   m_IsPrefabParent: 0
@@ -14968,7 +14973,13 @@ Prefab:
       propertyPath: wheel.Array.data[3]
       value: 
       objectReference: {fileID: 1229222701}
-    m_RemovedComponents: []
+    - target: {fileID: 65409136311210204, guid: c32ab59e9fc8a0848a9cb6fde18e1462,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114485561661019932, guid: c32ab59e9fc8a0848a9cb6fde18e1462, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c32ab59e9fc8a0848a9cb6fde18e1462, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1888423210
