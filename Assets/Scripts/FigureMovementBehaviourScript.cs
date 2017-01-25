@@ -33,12 +33,14 @@ public class FigureMovementBehaviourScript : MonoBehaviour
     private bool movementFinished = false;
     public bool won;
     private Transform endMarker;
+    private AudioSource myAudioSource;
 
 
 
     // Use this for initialization
     void Start()
     {
+        myAudioSource = GetComponent<AudioSource>();
         setFigure();
         current = figure.transform.position;
         //setFigure muss immer vor setReward ausgeführt werden damit reward und figure nicht auf dem gleichen Feld stehen.
@@ -58,6 +60,7 @@ public class FigureMovementBehaviourScript : MonoBehaviour
             movementQueue(firstMove(startPosition));
             startMovement = true;
             step = 0;
+            myAudioSource.Play();
         }
                 
         if (startMovement == true)
@@ -242,6 +245,15 @@ public class FigureMovementBehaviourScript : MonoBehaviour
         {
             step++;
             current = target;
+            if (step < positionQueue.Length)
+            {
+                target = new Vector3(koordinateSystem.transform.GetChild(positionQueue[step]).position.x, figure.transform.position.y, koordinateSystem.transform.GetChild(positionQueue[step]).position.z);
+                if (current != target)
+                {
+                    myAudioSource.Play();
+                }
+            }
+            
         }
     }
 
