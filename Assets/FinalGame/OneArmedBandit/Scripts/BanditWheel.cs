@@ -32,7 +32,8 @@ public class BanditWheel : MonoBehaviour {
             BanditData.Instance.updateNumber = true;
             turnUp = false;
 
-            rotateDown();
+            //rotateDown();
+            BanditData.Instance.setCurrentNumber(wheelNum, currentNumber = (currentNumber % 9) + 1);
 
             targetRotation *= Quaternion.Euler(Vector3.left * rotationAngle);
             sourceRotation = transform.rotation;
@@ -40,20 +41,11 @@ public class BanditWheel : MonoBehaviour {
             //Debug.Log("sourceRotation: " + sourceRotation + ";  targetRotation: " + targetRotation);
             //Debug.Log(Quaternion.Angle(transform.rotation, targetRotation));
         }
-        else if (turnDown)
-        {
-            BanditData.Instance.updateNumber = true;
-            turnDown = false;
-
-            rotateUp();
-
-            targetRotation *= Quaternion.Euler(Vector3.right * rotationAngle);
-        }
 
         //Apply Rotation
         transform.localRotation = Quaternion.Lerp(transform.localRotation, targetRotation, Time.deltaTime * smoothRotation);
 
-        if (Quaternion.Angle(transform.rotation, targetRotation) <= 99.0f && !stopWheel)
+        if (Quaternion.Angle(transform.rotation, targetRotation) <= 98.0f && !stopWheel)
         {
             turnUp = true;
         }
