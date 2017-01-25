@@ -104,7 +104,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4, y: 3.9999993, z: 0.79999983}
+  m_Size: {x: 2.5, y: 2.5, z: 0.79999983}
   m_Center: {x: 0, y: 0, z: 0.39999992}
 --- !u!114 &114764740675059606
 MonoBehaviour:
@@ -117,6 +117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37139dce3c3c93944838bed666337fd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FallSpeed: 10
-  FallDistance: 20
+  FallSpeed: 20
+  FallDistance: 80
   ResetSpeed: 20
