@@ -14,6 +14,8 @@ public class BanditData  {
     private static int currentlyTurning;
     private static bool done = false;
     private static bool moveDoor = false;
+    private static bool wheelStop = false;
+    private static bool restart = false;
 
     private BanditData()
     {
@@ -136,6 +138,30 @@ public class BanditData  {
         set
         {
             moveDoor = value;
+        }
+    }
+
+    public bool wheelStopped
+    {
+        get
+        {
+            return wheelStop;
+        }
+        set
+        {
+            wheelStop = value;
+        }
+    }
+
+    public bool restartBandit
+    {
+        get
+        {
+            return restart;
+        }
+        set
+        {
+            restart = value;
         }
     }
 }
