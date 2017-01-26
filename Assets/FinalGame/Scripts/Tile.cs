@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider))]
 [RequireComponent(typeof(Renderer))]
 public class Tile : MonoBehaviour {
     //Public
@@ -88,7 +87,7 @@ public class Tile : MonoBehaviour {
         if (c.gameObject.CompareTag("Player"))
         {
             //if this tile is not safe
-            if (!gameManager.IsSafeNumber(value))
+            if (gameManager != null && !gameManager.IsSafeNumber(value))
             {
                 state = State.Falling;
             }

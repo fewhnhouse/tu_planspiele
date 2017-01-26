@@ -4,27 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TileGameUI : MonoBehaviour {
-    public Text TimeText;
-    public Text NumberText;
-    public TileGameManager GameManager;
+    public List<NumberDoor> NumberDoors = new List<NumberDoor>();
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        //Set timer text
-        TimeText.text = "Zeit übrig: " + string.Format("{0:00}", GameManager.GetTimeLeftInRound());
-
-        //set safe numbers
-        string zahlenText = "Zahlen:";
-        foreach(int i in GameManager.GetSafeNumbers())
+	public void SetSafeNumbers(List<int> safeNumbers)
+    {
+        //open all doors with a valid number
+        for (int i = 0; i < safeNumbers.Count; i++)
         {
-            zahlenText += " " + i + ",";
+            NumberDoors[i].SetValue(safeNumbers[i]);
         }
 
-        NumberText.text = zahlenText;
-	}
+        //close all doors without a number
+        for (int i = safeNumbers.Count; i < NumberDoors.Count; i++)
+        {
+            NumberDoors[i].Close();
+        }
+    }
 }

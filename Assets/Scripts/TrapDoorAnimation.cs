@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TrapDoorAnimation: MonoBehaviour {
+    public bool UpdateBoxCollider = true;
     private bool closed = true;
     private Animator animator;
     private Collider doorCollider;
@@ -10,7 +11,10 @@ public class TrapDoorAnimation: MonoBehaviour {
     void Start()
     {
         animator = GetComponent<Animator>();
-        doorCollider = GetComponent<Collider>();
+
+        if (UpdateBoxCollider)
+            doorCollider = GetComponent<Collider>();
+
         Close();
     }
 
@@ -35,6 +39,7 @@ public class TrapDoorAnimation: MonoBehaviour {
 
     private void UpdateCollider()
     {
-        doorCollider.enabled = closed;
+        if(UpdateBoxCollider)
+            doorCollider.enabled = closed;
     }
 }

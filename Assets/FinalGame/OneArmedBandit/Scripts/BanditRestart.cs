@@ -5,13 +5,17 @@ using UnityEngine;
 public class BanditRestart : MonoBehaviour, Activatable {
 
     public GameObject[] wheel;
+    public float LeverAnimationDelay;
     private BanditWheel w;
     private int l = 0;
     private int i = 0;
+    private Animator animator;
 
     void Start()
     {
         l = wheel.Length;
+        animator = GetComponent<Animator>();
+        animator.SetBool("Up", true);
     }
 
     public void Activate()
@@ -26,6 +30,18 @@ public class BanditRestart : MonoBehaviour, Activatable {
                 w.setStartWheel();
             }
             i = 0;
+
+            StartCoroutine(trapAnimation());
         }
+
+
+    }
+
+    private IEnumerator trapAnimation()
+    {
+        animator.SetBool("Up", false);
+        yield return new WaitForSeconds(LeverAnimationDelay);
+
+        animator.SetBool("Up", true);
     }
 }

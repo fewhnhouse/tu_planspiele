@@ -13,6 +13,7 @@ public class TileGameManager : MonoBehaviour {
     public int NumberOfRows;
     public int NumberOfColumns;
     public StoneTimer stoneTimer;
+    public TileGameUI tileGameUI;
 
     //Private
     private float difficulty = 0;                       //current difficulty       
@@ -157,6 +158,9 @@ public class TileGameManager : MonoBehaviour {
 
         //safe number is definitely a non-empty list
         this.safeNumbers = noDupes;
+
+        //update ui
+        tileGameUI.SetSafeNumbers(noDupes);
     }
 
     public int[] GetSafeNumbers()
