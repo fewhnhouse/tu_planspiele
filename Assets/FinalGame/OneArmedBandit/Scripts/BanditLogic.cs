@@ -25,13 +25,6 @@ public class BanditLogic : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (BanditData.Instance.updateNumber)
-        {
-            UpdateSum();
-            //playSound();
-
-            BanditData.Instance.updateNumber = false;
-        }
 
         if (BanditData.Instance.solved)
         {
@@ -50,22 +43,16 @@ public class BanditLogic : MonoBehaviour {
         if(BanditData.Instance.wheelStopped)
         {
             BanditData.Instance.wheelStopped = false;
-            i++;
+
+            if(!BanditData.Instance.restartBandit)
+                i++;
+
             if (i >= length)
             {
                 BanditData.Instance.solved = true;
                 BanditData.Instance.restartBandit = true;
                 i = 0;
             }
-        }
-    }
-
-    private void UpdateSum()
-    {
-        BanditData.Instance.sum = 0;
-        for (int i = 0; i < 4; i++)
-        {
-            BanditData.Instance.sum += BanditData.Instance.getCurrentNumber(i);
         }
     }
 

@@ -27,7 +27,7 @@ public class BanditWheel : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (turnUp)
+        if (turnUp && !stopWheel)
         {
             BanditData.Instance.updateNumber = true;
             turnUp = false;
@@ -91,5 +91,10 @@ public class BanditWheel : MonoBehaviour {
     public void setStartWheel()
     {
         stopWheel = false;
+    }
+
+    public bool getWheelStopped()
+    {
+        return stopWheel;
     }
 }

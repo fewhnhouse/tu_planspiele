@@ -14,7 +14,7 @@ public class BanditStopRotation : MonoBehaviour, Activatable
 
     public void Activate()
     {
-        if (!BanditData.Instance.solved)
+        if (!BanditData.Instance.solved && !w.getWheelStopped())
         {
             BanditData.Instance.wheelStopped = true;
             w.setStopWheel();
