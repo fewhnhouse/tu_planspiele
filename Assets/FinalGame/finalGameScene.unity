@@ -7740,7 +7740,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 499154174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 183.56, y: 13.04, z: 100.56}
+  m_LocalPosition: {x: 183.56, y: 12.651, z: 98.405}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 956227738}
@@ -22948,6 +22948,7 @@ GameObject:
   - component: {fileID: 1612147393}
   - component: {fileID: 1612147392}
   - component: {fileID: 1612147391}
+  - component: {fileID: 1612147395}
   m_Layer: 5
   m_Name: LevelFinishedCanvas
   m_TagString: Untagged
@@ -23030,6 +23031,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1612147395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1612147390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6a2df7465d6ff04d93fbfafd53443b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NewScene: Credits
+  Delay: 10
 --- !u!1001 &1613671088
 Prefab:
   m_ObjectHideFlags: 0
@@ -25296,7 +25310,7 @@ Prefab:
     - target: {fileID: 114064837942091840, guid: d9051999cde4b354cb9364d1400207f7,
         type: 2}
       propertyPath: OnOpen.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4312742638410110, guid: d9051999cde4b354cb9364d1400207f7, type: 2}
       propertyPath: m_LocalPosition.x
@@ -25383,6 +25397,31 @@ Prefab:
     - target: {fileID: 114064837942091840, guid: d9051999cde4b354cb9364d1400207f7,
         type: 2}
       propertyPath: OnOpen.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114064837942091840, guid: d9051999cde4b354cb9364d1400207f7,
+        type: 2}
+      propertyPath: OnOpen.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114064837942091840, guid: d9051999cde4b354cb9364d1400207f7,
+        type: 2}
+      propertyPath: OnOpen.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114064837942091840, guid: d9051999cde4b354cb9364d1400207f7,
+        type: 2}
+      propertyPath: OnOpen.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1612147395}
+    - target: {fileID: 114064837942091840, guid: d9051999cde4b354cb9364d1400207f7,
+        type: 2}
+      propertyPath: OnOpen.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: StartTimer
+      objectReference: {fileID: 0}
+    - target: {fileID: 114064837942091840, guid: d9051999cde4b354cb9364d1400207f7,
+        type: 2}
+      propertyPath: OnOpen.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
