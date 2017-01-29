@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TileGameManager : MonoBehaviour {
 
@@ -14,6 +15,7 @@ public class TileGameManager : MonoBehaviour {
     public int NumberOfColumns;
     public StoneTimer stoneTimer;
     public TileGameUI tileGameUI;
+    public Text ScoreText;
 
     //Private
     private float difficulty = 0;                       //current difficulty       
@@ -24,6 +26,7 @@ public class TileGameManager : MonoBehaviour {
     private bool fieldSet = false;
     private bool rulesSet = false;
     private float timesPassed = 0;
+    private int RemainingRounds;
 
     public bool RulesSet
     {
@@ -183,7 +186,7 @@ public class TileGameManager : MonoBehaviour {
 
     public float GetNumberOfRoundsLeft()
     {
-        return NumberOfRounds;
+        return RemainingRounds;
     }
 
     public float GetTimePassedInSeconds()
@@ -191,8 +194,20 @@ public class TileGameManager : MonoBehaviour {
         return timesPassed;
     }
 
+    public void SetScoreText()
+    {
+        if (ScoreText != null)
+        {
+            float maximumTime = TimeForEachRound * NumberOfRounds;
+            int prizeMoney = Mathf.RoundToInt(500 * (1 - GetTimePassedInSeconds() / maximumTime));
+            ScoreText.text = prizeMoney + "%";
+        }
+    }
+
     private void StartGame()
     {
+        RemainingRounds = NumberOfRounds;
+
         SetField();
         RandomizeField();
 
@@ -329,14 +344,14 @@ public class TileGameManager : MonoBehaviour {
     private void EndOfRound()
     {
 
-        if (NumberOfRounds > 1)
+        if (RemainingRounds > 1)
         {
             RandomizeField();
 
             ResetTiles();
 
             timeLeftInRound = TimeForEachRound;
-            NumberOfRounds--;
+            RemainingRounds--;
 
             stoneTimer.ResetTimer();
             ResetTiles();
@@ -350,8 +365,6 @@ public class TileGameManager : MonoBehaviour {
 
     private void EndOfGame()
     {
-        Debug.Log("TileManager: End of Game");
         state = State.Ended;
-        //todo...
     }
 }
