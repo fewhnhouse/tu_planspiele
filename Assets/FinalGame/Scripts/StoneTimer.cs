@@ -11,6 +11,7 @@ public class StoneTimer : MonoBehaviour {
 
     private State state = State.Stop;
     private float percentage;
+    private AudioSource gongSound;
 
     private enum State
     {
@@ -19,6 +20,8 @@ public class StoneTimer : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        gongSound = GetComponent<AudioSource>();
+
         StoneSlab.transform.position = StartTarget.position;
         SetPercentage(1);
 	}
@@ -59,6 +62,9 @@ public class StoneTimer : MonoBehaviour {
     public void ResetTimer()
     {
         state = State.MovingUp;
+
+        gongSound.Play();
+
         StartCoroutine(resetCoroutine());
     }
 
