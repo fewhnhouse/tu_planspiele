@@ -65,7 +65,6 @@ public class Pausenscripte : MonoBehaviour
                 Camera.transform.position = CharakterCamera.transform.position;
                 Camera.transform.rotation = CharakterCamera.transform.rotation;
                 Charakter.SetActive(false);
-
                 Camera.SetActive(true);
             }
             else
