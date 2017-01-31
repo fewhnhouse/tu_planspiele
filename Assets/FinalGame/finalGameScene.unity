@@ -14107,9 +14107,9 @@ MonoBehaviour:
     - serializedVersion: 2
       time: 1
       value: 1
-      inSlope: 1
+      inSlope: 0.44761297
       outSlope: 1
-      tangentMode: 34
+      tangentMode: 1
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
@@ -14118,15 +14118,15 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0.037499998
-      inSlope: 0.9625
-      outSlope: 0.9625
+      value: -0.012500001
+      inSlope: 1
+      outSlope: 1
       tangentMode: 34
     - serializedVersion: 2
       time: 1
-      value: 1
-      inSlope: 0.9625
-      outSlope: 0.9625
+      value: 0.9875
+      inSlope: 1
+      outSlope: 1
       tangentMode: 34
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -14138,18 +14138,18 @@ MonoBehaviour:
       time: 0
       value: 0
       inSlope: 1
-      outSlope: 1
-      tangentMode: 34
+      outSlope: 0.8028826
+      tangentMode: 1
     - serializedVersion: 2
       time: 1
       value: 1
-      inSlope: 1
+      inSlope: 1.2697736
       outSlope: 1
-      tangentMode: 34
+      tangentMode: 1
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  useDepthCorrection: 1
+  useDepthCorrection: 0
   zCurve:
     serializedVersion: 2
     m_Curve:
@@ -14226,7 +14226,7 @@ MonoBehaviour:
   selectiveCc: 0
   selectiveFromColor: {r: 1, g: 1, b: 1, a: 1}
   selectiveToColor: {r: 1, g: 1, b: 1, a: 1}
-  mode: 1
+  mode: 0
   updateTextures: 1
   colorCorrectionCurvesShader: {fileID: 4800000, guid: 62bcade1028c24ca1a39760ed84b9487,
     type: 3}
