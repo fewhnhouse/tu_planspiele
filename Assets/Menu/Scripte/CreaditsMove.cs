@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class CreaditsMove : MonoBehaviour {
 
-    private float cooldown = 2.0f;
+    private float cooldown = 3.0f;
     public GameObject gameObject;
     public GameObject target;
     private float destiany;
     public int speed = 3;
+    private float distanz;
     // Use this for initialization
     private void Start()
     {
         destiany = target.transform.position.y;
+        distanz = Mathf.Abs(target.transform.position.y - gameObject.transform.position.y);
     }
 
     public void Update()
@@ -26,7 +28,7 @@ public class CreaditsMove : MonoBehaviour {
             if (gameObject.transform.position.y <= destiany)
             {
                 Vector3 v = gameObject.transform.position;
-                gameObject.transform.position = new Vector3(v.x,v.y + Time.deltaTime*speed, v.z);
+                gameObject.transform.position = new Vector3(v.x,v.y +1.0f/50.0f *distanz* Time.deltaTime*speed, v.z);
             }
         }
     }
