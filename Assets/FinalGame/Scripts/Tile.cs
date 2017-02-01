@@ -9,6 +9,9 @@ public class Tile : MonoBehaviour {
     public float FallSpeed;
     public float FallDistance;
     public float ResetSpeed;
+    [Header("Animation")]
+    public float AnimationTime;
+    public AnimationCurve EmissionCurve;
 
     //private
     private int value;
@@ -69,6 +72,7 @@ public class Tile : MonoBehaviour {
             return;
         }
 
+        //new value
         if(newValue != value)
         {
             //load new material
@@ -76,6 +80,9 @@ public class Tile : MonoBehaviour {
 
             //set new material
             tileRenderer.material = newMaterial;
+
+            //play animation, when number changes
+            StartCoroutine(emissionAnimation());
         }
 
         value = newValue;
@@ -97,5 +104,31 @@ public class Tile : MonoBehaviour {
     public void Reset()
     {
         state = State.Reset;
+    }
+
+    //hacky
+    //changes emission on all tiles with same material, but since all tiles change number at the same time, it doesnt matter
+    private IEnumerator emissionAnimation()
+    {
+        float duration = AnimationTime;
+        float elapsedTime = 0f;
+        
+        //make sure to set it back to the original
+        tileRenderer.material.SetColor("_EmissionColor", Color.black);
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+
+            float brightness = EmissionCurve.Evaluate(elapsedTime / duration);
+
+            tileRenderer.material.SetColor("_EmissionColor", new Color(brightness, brightness, brightness));
+
+            yield return null;
+        }
+        
+        //make sure to set it back to the original
+        tileRenderer.material.SetColor("_EmissionColor", Color.black);
+
     }
 }

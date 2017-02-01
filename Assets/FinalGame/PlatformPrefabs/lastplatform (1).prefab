@@ -120,3 +120,28 @@ MonoBehaviour:
   FallSpeed: 20
   FallDistance: 80
   ResetSpeed: 20
+  AnimationTime: 2
+  EmissionCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 2.0211766
+      tangentMode: 65
+    - serializedVersion: 2
+      time: 0.19790454
+      value: 0.4
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0

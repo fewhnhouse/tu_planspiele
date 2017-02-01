@@ -13,6 +13,7 @@ public class Scenenavigator : MonoBehaviour
     public void Awake()
     {
         Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
+        Cursor.visible = true;
     }
 
     public void switchSzene(string szene)

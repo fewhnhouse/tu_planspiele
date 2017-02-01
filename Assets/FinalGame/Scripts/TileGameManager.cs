@@ -157,7 +157,6 @@ public class TileGameManager : MonoBehaviour {
         {
             s += i + ", ";
         }
-        Debug.Log(s);
 
         //safe number is definitely a non-empty list
         this.safeNumbers = noDupes;
@@ -200,7 +199,7 @@ public class TileGameManager : MonoBehaviour {
         {
             float maximumTime = TimeForEachRound * NumberOfRounds;
             int prizeMoney = Mathf.RoundToInt(500 * (1 - GetTimePassedInSeconds() / maximumTime));
-            ScoreText.text = prizeMoney + "%";
+            ScoreText.text = prizeMoney + "/500 Münzen";
         }
     }
 
