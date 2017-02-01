@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//todo when tile is resetting, play may move freely on platform
 [RequireComponent(typeof(Renderer))]
 public class Tile : MonoBehaviour {
     //Public
     // set these in the prefab
     public float FallSpeed;
     public float FallDistance;
-    public float ResetSpeed;
     [Header("Animation")]
-    public float AnimationTime;
+    public float ResetAnimationTime;
+    public AnimationCurve ResetCurve;
+    public float EmissionAnimationTime;
     public AnimationCurve EmissionCurve;
 
     //private
@@ -28,6 +30,8 @@ public class Tile : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
         tileRenderer = GetComponent<Renderer>();
+
+        startPosition = transform.position;
     }
 
     void Update()
@@ -44,16 +48,10 @@ public class Tile : MonoBehaviour {
                 
             case State.Reset:
                 //reset to start position
-                transform.position = Vector3.Lerp(transform.position, startPosition, 0.5f);
-                if(Vector3.Distance(transform.position, startPosition) < 0.2f)
-                {
-                    transform.position = startPosition;
-                    state = State.Stay;
-                }
+                StartCoroutine(resetAnimation());
                 break;
 
             case State.Stay:
-                startPosition = transform.position;
                 break;
         }
     }
@@ -110,7 +108,7 @@ public class Tile : MonoBehaviour {
     //changes emission on all tiles with same material, but since all tiles change number at the same time, it doesnt matter
     private IEnumerator emissionAnimation()
     {
-        float duration = AnimationTime;
+        float duration = EmissionAnimationTime;
         float elapsedTime = 0f;
         
         //make sure to set it back to the original
@@ -130,5 +128,25 @@ public class Tile : MonoBehaviour {
         //make sure to set it back to the original
         tileRenderer.material.SetColor("_EmissionColor", Color.black);
 
+    }
+
+    private IEnumerator resetAnimation()
+    {
+        Vector3 bottomPosition = transform.position;
+
+        float duration = ResetAnimationTime;
+        float elapsedTime = 0f;
+
+        while(elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+
+            transform.position = Vector3.Lerp(bottomPosition, startPosition, ResetCurve.Evaluate(elapsedTime / duration));
+
+            yield return null;
+        }
+
+        transform.position = startPosition;
+        state = State.Stay;
     }
 }

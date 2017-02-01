@@ -79,8 +79,7 @@ public class Gamemaster : MonoBehaviour {
     {
         Loadscripte.load.finishedLevels[0] = true;
         stoneDoor.Open();
-        currentScenarioText.text = "Hint: 3";
+        currentScenarioText.text = "Hinweis: 3";
         SpHandler.Finished();
-        Debug.Log("Finished Würfel Puzzle");
     }
 }

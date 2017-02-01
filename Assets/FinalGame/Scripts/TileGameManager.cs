@@ -198,9 +198,11 @@ public class TileGameManager : MonoBehaviour {
         if (ScoreText != null)
         {
             float maximumTime = TimeForEachRound * NumberOfRounds;
-            int prizeMoney = Mathf.RoundToInt(500 * (1 - GetTimePassedInSeconds() / maximumTime));
+            int prizeMoney = Mathf.RoundToInt(Mathf.Clamp((500 * (1 - GetTimePassedInSeconds() / maximumTime)), 10, 500));//min money 10, max money 500
             ScoreText.text = prizeMoney + "/500 Münzen";
         }
+
+        EndOfGame();
     }
 
     private void StartGame()
@@ -342,24 +344,18 @@ public class TileGameManager : MonoBehaviour {
 
     private void EndOfRound()
     {
-
+        //any player should be able to finish the game
         if (RemainingRounds > 1)
         {
             RandomizeField();
-
-            ResetTiles();
-
-            timeLeftInRound = TimeForEachRound;
-            RemainingRounds--;
-
-            stoneTimer.ResetTimer();
-            ResetTiles();
         }
-        else
-        {
-            EndOfGame();
-        }
-        
+
+        timeLeftInRound = TimeForEachRound;
+        RemainingRounds--;
+
+        stoneTimer.ResetTimer();
+        ResetTiles();
+
     }
 
     private void EndOfGame()

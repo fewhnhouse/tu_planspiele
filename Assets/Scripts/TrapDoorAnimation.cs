@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class TrapDoorAnimation: MonoBehaviour {
     public bool UpdateBoxCollider = true;
+    public bool PlaySound = true;
     private bool closed = true;
     private Animator animator;
     private Collider doorCollider;
+    private AudioSource audioSource;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+
+        if (PlaySound)
+            audioSource = GetComponent<AudioSource>();
 
         if (UpdateBoxCollider)
             doorCollider = GetComponent<Collider>();
@@ -23,6 +28,9 @@ public class TrapDoorAnimation: MonoBehaviour {
         closed = false;
         UpdateCollider();
         animator.SetBool("closed", closed);
+
+        if (PlaySound)
+            audioSource.Play();
     }
 
     public void Close()
