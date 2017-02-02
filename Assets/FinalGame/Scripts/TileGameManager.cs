@@ -16,6 +16,7 @@ public class TileGameManager : MonoBehaviour {
     public StoneTimer stoneTimer;
     public TileGameUI tileGameUI;
     public Text ScoreText;
+    public bool Cheat = false;
 
     //Private
     private float difficulty = 0;                       //current difficulty       
@@ -175,6 +176,9 @@ public class TileGameManager : MonoBehaviour {
 
     public bool IsSafeNumber(int number)
     {
+        if (Cheat)
+            return true;
+
         return safeNumbers.Contains(number);
     }
 

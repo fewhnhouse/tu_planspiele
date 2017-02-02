@@ -14,6 +14,7 @@ public class Scenenavigator : MonoBehaviour
     {
         Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void switchSzene(string szene)

@@ -9033,6 +9033,7 @@ MonoBehaviour:
   stoneTimer: {fileID: 356979020}
   tileGameUI: {fileID: 557943083}
   ScoreText: {fileID: 1194081276}
+  Cheat: 0
 --- !u!4 &557943082
 Transform:
   m_ObjectHideFlags: 0
@@ -25675,6 +25676,11 @@ Prefab:
     - target: {fileID: 4312742638410110, guid: d9051999cde4b354cb9364d1400207f7, type: 2}
       propertyPath: m_LocalScale.z
       value: 0.87951607
+      objectReference: {fileID: 0}
+    - target: {fileID: 82928687297651944, guid: d9051999cde4b354cb9364d1400207f7,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.656
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d9051999cde4b354cb9364d1400207f7, type: 2}
