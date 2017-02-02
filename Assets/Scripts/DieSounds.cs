@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DieSounds : MonoBehaviour {
-   
+
+    [Range (0,1)]
+    public float SFXVolume = 0.35f;
+    [Range(0,1)]
+    public float SFXSpatialBlend = .5f;
     public List<AudioClip> DieHitSounds = new List<AudioClip>();
 
     private List<AudioSource> audioSources = new List<AudioSource>();
@@ -68,8 +72,8 @@ public class DieSounds : MonoBehaviour {
     {
         AudioSource source = gameObject.AddComponent<AudioSource>();
         source.playOnAwake = false;
-        source.spatialBlend = .5f;
-        source.volume = 0.35f;
+        source.spatialBlend = SFXSpatialBlend;
+        source.volume = SFXVolume;
         audioSources.Add(source);
         return source;
     }
