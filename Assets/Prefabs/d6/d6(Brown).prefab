@@ -133,6 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa40c5ce77a20174793f1384076ced31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SFXVolume: 0.2
+  SFXSpatialBlend: 0.75
   DieHitSounds:
   - {fileID: 8300000, guid: 8611d33d320c1c840a725800b587d404, type: 3}
   - {fileID: 8300000, guid: 12fab4c1d9d837d42b3c5eaf614f5c85, type: 3}
