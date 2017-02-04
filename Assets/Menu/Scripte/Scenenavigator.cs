@@ -19,6 +19,7 @@ public class Scenenavigator : MonoBehaviour
 
     public void switchSzene(string szene)
     {
+        WheelData.Instance.solved = false;
         SceneManager.LoadScene(szene);
     }
     public void leaveGame()
@@ -31,8 +32,10 @@ public class Scenenavigator : MonoBehaviour
     }
     public void loading(string scene)
     {
+
         if (File.Exists(Application.persistentDataPath + "/playerProgress.dat"))
         {
+            WheelData.Instance.solved = false;
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/playerProgress.dat", FileMode.Open);
             playerProgress data = (playerProgress)bf.Deserialize(file);
